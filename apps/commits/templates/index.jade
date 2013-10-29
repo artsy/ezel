@@ -1,0 +1,14 @@
+doctype 5
+html
+  head
+    title= sd.PROJECT_NAME
+    link( type='text/css', rel='stylesheet', href=('/commits' + sd.CSS_EXT) )
+  body
+    h1 See commits for Artsy repos using the Github API!
+    input#cards-repo( placeholder='Try "flux" or "garner" for starters.' )
+    ul#cards-list
+      include list
+    #scripts
+      != sharifyScript()
+      script( src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js' )
+      script( src='/commits' + sd.JS_EXT )

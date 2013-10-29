@@ -93,3 +93,15 @@ Some common practices are to split up your route handlers into testable function
 ### Build Scripts & Configuration
 
 Easel comes with simple configuration and build tools that are standard with most environments. A [Makefile](http://en.wikipedia.org/wiki/Make_(software)) wraps scripts into nice command-line friendly tasks. When more complex build scripts are needed it's encouraged to wrap them up into node modules that can be run via `node lib/script.js`. If more complex command-line options are needed [Commander.js](http://visionmedia.github.io/commander.js/) is a popular framework for this. Configuration such as whether you're running in production, your external API keys, etc. is handled entirely by [environment variables](http://en.wikipedia.org/wiki/Environment_variable). For ease of setup there is a /config.js file that wraps `process.env` and declares sensible defaults for development.
+
+## License
+
+(The MIT License)
+
+Copyright (c) Craig Spaeth craigspaeth@gmail.com, Art.sy, 2013
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
