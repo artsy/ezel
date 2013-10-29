@@ -94,6 +94,10 @@ Some common practices are to split up your route handlers into testable function
 
 Easel comes with simple configuration and build tools that are standard with most environments. A [Makefile](http://en.wikipedia.org/wiki/Make_(software)) wraps scripts into nice command-line friendly tasks. When more complex build scripts are needed it's encouraged to wrap them up into node modules that can be run via `node lib/script.js`. If more complex command-line options are needed [Commander.js](http://visionmedia.github.io/commander.js/) is a popular framework for this. Configuration such as whether you're running in production, your external API keys, etc. is handled entirely by [environment variables](http://en.wikipedia.org/wiki/Environment_variable). For ease of setup there is a /config.js file that wraps `process.env` and declares sensible defaults for development.
 
+### Asset Pipeline
+
+To be filled in....
+
 ## License
 
 (The MIT License)

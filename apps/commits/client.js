@@ -1,7 +1,7 @@
 var Backbone = require('backbone')
-  , $ = Backbone.$ = require('components-jquery');
+  , $ = Backbone.$ = require('components-jquery')
   , sd = require('sharify').data
-  , Commits = require('../../collections/commits.coffee');
+  , Commits = require('../../collections/commits.js');
 
 module.exports.CommitsView = CommitsView = Backbone.View.extend({
   
@@ -14,16 +14,16 @@ module.exports.CommitsView = CommitsView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$('#cards-list').html(this.listTemplate({ commits: this.collection.models }));
+    this.$('#commits-list').html(this.template({ commits: this.collection.models }));
   },
   
   events: {
-    'keyup #cards-repo': 'debounceChangeRepo'
+    'change #commits-repo-input': 'changeRepo'
   },
   
   changeRepo: function(e) {
-    _this.collection.repo = $(e.target).val();
-    return _this.collection.fetch();
+    this.collection.repo = $(e.target).val();
+    this.collection.fetch();
   }
 });
 
@@ -36,5 +36,3 @@ module.exports.init = function() {
     })
   });
 };
-
-$(init);

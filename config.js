@@ -6,4 +6,6 @@ module.exports = {
 }
 
 // Override any values with env variables
-for(var key in exports) { exports[key] = process.env[key] || exports[key] }
+for(var key in module.exports) {
+  module.exports[key] = process.env[key] || module.exports[key];
+}

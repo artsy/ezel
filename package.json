@@ -13,6 +13,9 @@
     "backbone-super-sync": "*"
   },
   "devDependencies": {
-    "components-jquery": "git://github.com/components/jquery.git"
+    "components-jquery": "git://github.com/components/jquery.git",
+    "browserify": "*",
+    "stylus": "*",
+    "jadeify2": "*"
   }
 }
