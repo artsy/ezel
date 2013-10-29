@@ -54,7 +54,7 @@ Easel borrows a page from [Django](https://www.djangoproject.com/) and encourage
 
 #### Project
 
-Refers to the root level of the directoy and is responsible for the initial setup code, the actual server boot script, and gluing the pieces together like mounting apps.
+Refers to the root level and contains the initial setup code, the actual server boot script, and "global" modules such as models, collections, and libraries. The server boot script is the root /index.js file and setup is extracted into /lib/setup.js to encourage modularizing and testing your setup code.
 
 #### Apps
 
@@ -80,12 +80,16 @@ Libraries are distinct from models and collections in that they don't have domai
 
 Tests are broken up into project-level and app-level tests that are run together in `make test`.
 
-#### Project-level tests
+#### Project-level Tests
 
 Project-level tests involve any component, library, model, and collection tests. Because Easel uses Browserify to write model and collection code as common.js modules that can run on the server you can easily test your Backbone model and collection code in node.js without any extra ceremony. However some libraries and most components are meant to be run in the browser. For these you can use [benv](http://github.com/artsy/benv) to set up a fake browser environment in node and require these modules for testing.
 
-#### App-level tests
+#### App-level Tests
 
 App-level tests can come in a number of different forms, but often involve some combination of route, template, client-side, and integration tests. Given that apps can vary in complexity and number of components they use, it's up to you to decide how to structure and test their parts.
 
 Some common practices are to split up your route handlers into testable functions that pass in stubbed request and response objects. Templates can simply be compiled and asserted against the generated html. Client-side code can be unit tested in node.js using [benv](http://github.com/artsy/benv), and using Backbone views can go a long way to making this easier. Finally a fast suite of integration tests are run by starting the project against a fake API server that can be tested with a headless browser.
+
+### Build Scripts & Configuration
+
+Easel comes with simple configuration and build tools that are standard with most environments. A [Makefile](http://en.wikipedia.org/wiki/Make_(software)) wraps scripts into nice command-line friendly tasks. When more complex build scripts are needed feel free to wrap them up into node modules that can be run via `node lib/script.js` and put them in /lib . If more complex command-line options are needed [Commander.js](http://visionmedia.github.io/commander.js/) is a popular framework for this. Configuration such as whether you're running in production, your external API keys, etc. is handled entirely by [environment variables](http://en.wikipedia.org/wiki/Environment_variable). For ease of setup there is a /config.js file that wraps `process.env` and declares defaults for these variables.
