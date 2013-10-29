@@ -11,5 +11,8 @@
     "sharify": "*",
     "Backbone": "*",
     "backbone-super-sync": "*"
+  },
+  "devDependencies": {
+    "components-jquery": "git://github.com/components/jquery.git"
   }
 }
