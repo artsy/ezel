@@ -42,6 +42,7 @@ Some modules come with Easel by default but could easily be swapped out with you
 * [Jade](https://github.com/visionmedia/jade)
 * [Stylus](https://github.com/learnboost/stylus)
 * [Mocha](https://github.com/OliverJAsh/node-jadeify2)
+* [Zombie](http://zombie.labnotes.org/)
 
 Easel is simply a boilerplate structure for a Backbone application. So even though it does render on the server, it's main data source is meant to be an external HTTP API. This can come in a [variety](https://github.com/intridea/grape) [of](http://expressjs.com/) [forms](http://flask.pocoo.org/), and it's up to you to choose the best technology to serve your data over HTTP. Once you understand how the above projects work, diving into Easel is a matter of understanding it's architecture and patterns.
 
@@ -65,8 +66,26 @@ Components are small portions of UI re-used across apps. These are similar to [j
 
 Easel doesn't have project-level templates and stylesheets to encourage modularizing these pieces into apps and components. However for practicality's purpose if you need to write more global styles/templates/client-side-code, you can write it in a "layout" component under /components/layout.
 
-### Libraries vs. Models & Collections
+### Models & Collections
 
-Backbone model and collection code is often used across apps and therefore is placed at the root project level under /models and /collections. This code is meant to work on the server and client so it must be self-contained domain logic. Model/collection code can't use APIs only available to the browser or node such as accessing the file system or `XMLHttpRequest`. Backbone.sync is used as a layer over HTTP accessible on both sides, and any HTTP requests need be wrapped in a Backbone class or used by an anonymous instance, e.g. `new Backbone.Model({ url: sd.API_URL + '/system/up' }).fetch({ success: //... })`.
+Backbone model and collection code is often used across apps and therefore is placed at the root project level under /models and /collections. This code is meant to work on the server and client so it must be self-contained domain logic. Model/collection code can't use APIs only available to the browser or node such as accessing the file system or `XMLHttpRequest`. Backbone.sync is used as a layer over HTTP accessible on both sides, and any HTTP requests therefore need be wrapped in a Backbone class or used by an anonymous instance, e.g. `new Backbone.Model({ url: sd.API_URL + '/system/up' }).fetch({ success: //... })`.
 
-When you do need to wrap chunks of functionality that use browser or node specific APIs it's encouraged to write them as libraries under /lib. Libraries can be server only such as a converting an uploaded jpeg file into thumbnails, or browser-only such as parsing `window.location`. Libraries can even be shared such as a date parsing library or even an image converting library that uses imagemagick on the server and the HTML5 canvas API on the client. Libraries are distinct from models and collections in that they don't have domain logic and generally don't use 
+### Libraries
+
+When you do need to wrap up chunks of javascript that use browser or node specific APIs it's encouraged to write them as libraries under /lib. Libraries can be server only such as a converting an uploaded jpeg file into thumbnails, or browser-only such as parsing `window.location`. Libraries can also be shared between server and client such as a date parsing library or even an image converting library that uses imagemagick on the server and the HTML5 canvas API on the client. 
+
+Libraries are distinct from models and collections in that they don't have domain logic and generally don't use persistent data. They also shouldn't deal with UI or any general routing or application logic that can be handled by at the component or app-level.
+
+### Testing
+
+Tests are broken up into project-level and app-level tests that are run together in `make test`.
+
+#### Project-level tests
+
+Project-level tests involve any component, library, model, and collection tests. Because Easel uses Browserify to write model and collection code as common.js modules that can run on the server you can easily test your Backbone model and collection code in node.js without any extra ceremony. However some libraries and most components are meant to be run in the browser. For these you can use [benv](http://github.com/artsy/benv) to set up a fake browser environment in node and require these modules for testing.
+
+#### App-level tests
+
+App-level tests can come in a number of different forms, but often involve some combination of route, template, client-side, and integration tests. Given that apps can vary in complexity and number of components they use, it's up to you to decide how to structure and test their parts.
+
+Some common practices are to split up your route handlers into testable functions that pass in stubbed request and response objects. Templates can simply be compiled and asserted against the generated html. Client-side code can be unit tested in node.js using [benv](http://github.com/artsy/benv), and using Backbone views can go a long way to making this easier. Finally a fast suite of integration tests are run by starting the project against a fake API server that can be tested with a headless browser.
