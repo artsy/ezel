@@ -16,8 +16,8 @@ clean:
 	rm collections/commits.js
 	rm models/commit.js
 	rm -rf public/assets
-	rm lib/assets/commits.js
-	rm lib/assets/commits.styl
+	rm assets/commits.js
+	rm assets/commits.styl
 	rm test/models/commit.js
 	mkdir public/assets
 
