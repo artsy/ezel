@@ -46,7 +46,7 @@ Once you understand how the above projects work, diving into Easel is just a mat
 
 ### Project vs. Apps vs. Components
 
-Monolithic frameworks tend to organize your code by type such as /views, /stylesheets, /javascripts, etc. As your app grows larger this becomes an awkward and unmaintable way to delineate parts of your project. Easel encourages grouping files into conceptual pieces instead of by type. There are three different levels of this organization:
+Monolithic frameworks tend to organize your code by type such as /views, /stylesheets, /javascripts, etc. As your app grows larger this becomes an awkward and unmaintainable way to delineate parts of your project. Easel encourages grouping files into conceptual pieces instead of by type. There are three different levels of this organization:
 
 #### Project
 
@@ -54,7 +54,7 @@ Refers to the root, "global", level and contains the initial setup/server code a
 
 #### Apps
 
-Apps are small express applications that are [mounted into the main project(http://vimeo.com/56166857). What deliniates apps from one another is they conceptually deal with a certain section of your project, and they are often separated by a full page-refresh.
+Apps are small express applications that are [mounted into the main project(http://vimeo.com/56166857). What delineates apps from one another is they conceptually deal with a certain section of your project, and they are often separated by a full page-refresh.
 
 An app could be a complex thick-client "search" app, or a simple static "about" page. The organization of these apps are up to you, for a simple app you may put all of your code into an index.js file, while more complex apps may have their own /models, /components, /stylesheets, /templates, etc. folders.
 
@@ -70,7 +70,7 @@ Backbone.sync is used as a layer over HTTP accessible on both sides. Any HTTP re
 
 ### Libraries
 
-Libraries are a place to store modules that are used across apps and don't pertian to domain logic or UI that can be better handled by models or components. These can be server only such as a converting an uploaded jpeg file into thumbnails, browser-only such as an HTML5 Canvas library, or even shared such as a date parsing library that can be utilized on both the server and client.
+Libraries are a place to store modules that are used across apps and don't pertain to domain logic or UI that can be better handled by models or components. These can be server only such as a converting an uploaded jpeg file into thumbnails, browser-only such as an HTML5 Canvas library, or even shared such as a date parsing library that can be utilized on both the server and client.
 
 ### Testing
 
@@ -96,18 +96,6 @@ Configuration is handled entirely by [environment variables](http://en.wikipedia
 
 ### Asset Pipeline
 
-Easel's asset compilation is mostly handled by [Browserify](https://github.com/substack/node-browserify) and [Stylus](https://github.com/learnboost/stylus) with middleware added to lib/setup and a `make assets` task to build something more production ready.
+Easel's asset building is mostly handled by [Browserify](https://github.com/substack/node-browserify) and [Stylus](https://github.com/learnboost/stylus) with middleware added to lib/setup and a `make assets` task to build something more production ready.
 
-Place your asset packages in /assets and point your script or style tags to /assets/{filename} in your views and Easel will wire these up to compile on request in development and generate minifed assets for production under public/assets.
-
-## License
-
-(The MIT License)
-
-Copyright (c) Craig Spaeth craigspaeth@gmail.com, Art.sy, 2013
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Place your asset packages in /assets and point your script or style tags to /assets/{filename} in your views and Easel will wire these up to compile on request in development and generate minified assets for production under public/assets.

@@ -19,6 +19,7 @@ clean:
 	rm assets/commits.js
 	rm assets/commits.styl
 	rm test/models/commit.js
+	rm LICENSE.md
 	mkdir public/assets
 
 .PHONY: test
