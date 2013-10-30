@@ -27,7 +27,7 @@ Easel tries to take a fundamentally different approach to sharing code. Many exi
 4. Run the server `make s`
 5. Visit [localhost::4000](http://localhost:4000) and see an example that uses the Github API.
 
-After understanding some of the concepts below you can start clean by running `make clean` and setting the API_URL in /config to your own.
+After understanding some of the concepts below you can delete all of the example files and start clean by running `make clean`.
 
 ### Overview
 
