@@ -27,6 +27,8 @@ Easel tries to take a fundamentally different approach to sharing code. Many exi
 4. Run the server `make s`
 5. Visit [localhost::4000](http://localhost:4000) and see an example that uses the Github API.
 
+After understanding some of the concepts below you can start clean by running `make clean` and setting the API_URL in /config to your own.
+
 ### Overview
 
 Easel is composed of some core tools you should learn before diving in.
@@ -42,7 +44,10 @@ Some modules come with Easel by default but could easily be swapped out with you
 * [Jade](https://github.com/visionmedia/jade)
 * [Stylus](https://github.com/learnboost/stylus)
 * [Mocha](https://github.com/OliverJAsh/node-jadeify2)
+* [Should](https://github.com/visionmedia/should.js/)
+* [Sinon](http://sinonjs.org/)
 * [Zombie](http://zombie.labnotes.org/)
+* [Jquery](https://github.com/components/jquery)
 
 Easel is simply a boilerplate structure for a Backbone application. So even though it does render on the server, it's main data source is meant to be an external HTTP API. This can come in a [variety](https://github.com/intridea/grape) [of](http://expressjs.com/) [forms](http://flask.pocoo.org/), and it's up to you to choose the best technology to serve your data over HTTP. Once you understand how the above projects work, diving into Easel is just a matter of understanding it's patterns.
 

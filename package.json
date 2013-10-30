@@ -16,6 +16,13 @@
     "components-jquery": "git://github.com/components/jquery.git",
     "browserify": "*",
     "stylus": "*",
-    "jadeify2": "*"
+    "jadeify2": "*",
+    "browserify-dev-middleware": "*",
+    "should": "*",
+    "mocha": "*",
+    "sinon": "*",
+    "benv": "*",
+    "zombie": "*",
+    "html5": "*"
   }
 }

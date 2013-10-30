@@ -4,7 +4,7 @@ var c = require('./config')
 
 var app = module.exports = express();
 setup(app);
-
 app.listen(c.PORT, function() {
   console.log('Listening on port ' + c.PORT);
+  if(process.send) process.send('listening');
 });

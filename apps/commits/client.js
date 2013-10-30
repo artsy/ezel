@@ -1,20 +1,19 @@
 var Backbone = require('backbone')
   , $ = Backbone.$ = require('components-jquery')
   , sd = require('sharify').data
-  , Commits = require('../../collections/commits.js');
+  , Commits = require('../../collections/commits.js')
+  , listTemplate = function() {
+    return require('./templates/list.jade').apply(null, arguments)
+  };
 
 module.exports.CommitsView = CommitsView = Backbone.View.extend({
-  
-  template: function() {
-    return require('./templates/list.jade').apply(null, arguments);
-  },
 
   initialize: function() {
     this.collection.on('sync', this.render, this);
   },
 
   render: function() {
-    this.$('#commits-list').html(this.template({ commits: this.collection.models }));
+    this.$('#commits-list').html(listTemplate({ commits: this.collection.models }));
   },
   
   events: {
