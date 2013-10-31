@@ -1,10 +1,8 @@
 # Easel
 
-A boilerplate for building large Backbone projects that can run on the server and client.
+A boilerplate for Backbone projects that share code server/client and scale through modular architecture.
 
-## Introduction
-
-Easel makes it easy to start building modular Backbone apps that can run in the browser and on the server using [node.js](http://nodejs.org/). Built on popular libraries like [Express](http://expressjs.com/), [Backbone](http://backbonejs.org/), and [Browserify](http://browserify.org/). Easel isn't a framework of it's own but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.
+Built on popular libraries like [Express](http://expressjs.com/), [Backbone](http://backbonejs.org/), and [Browserify](http://browserify.org/), Easel isn't a framework of it's own but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.
 
 ## Getting Started
 
@@ -26,9 +24,9 @@ First it would be good to familiarize yourself with the tools Easel is built on.
 * [Sharify](https://github.com/artsy/sharify)
 * [Benv](https://github.com/artsy/benv)
 
-At it's heart Easel is just a Backbone app and therefore relies on an external API as it's data source. This can come in a [variety](http://expressjs.com/) [of](https://github.com/intridea/grape) [forms](http://flask.pocoo.org/), and it's up to you to choose the best technology to serve your data over HTTP.
+At it's heart Easel is just a Backbone app and therefore relies on an external API as it's data source. This can come in a [variety](http://expressjs.com/) [of](https://github.com/intridea/grape) [forms](http://flask.pocoo.org/) and it's up to you to choose the best technology to serve your data over HTTP.
 
-Once you understand how the above projects work, diving into Easel is just a matter of understanding it's patterns. When you're ready, you can delete all of the example files and start clean by running `make clean`.
+Once you understand how the above tools work, diving into Easel is just a matter of understanding it's patterns. When you're ready, you can delete all of the example files and start clean by running `make clean`.
 
 ## Project vs. Apps vs. Components
 
