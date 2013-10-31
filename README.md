@@ -2,10 +2,6 @@
 
 A boilerplate for building large Backbone projects that can run on the server and client. Modeled after the architecture of production apps at [Artsy](http://artsy.net/).
 
-[Download Easel in Javascript](https://github.com/artsy/easel/archive/master.zip)
-
-[Download Easel in Coffeescript](https://github.com/artsy/easel/archive/master.zip)
-
 ## Introduction
 
 Easel makes it easy to start building flexible & modular Backbone apps that can run in the browser and on the server using [node.js](http://nodejs.org/). Built on popular libraries like [Express](http://expressjs.com/), [Backbone](http://backbonejs.org/), and [Browserify](http://browserify.org/), Easel isn't a framework of it's own, but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.
@@ -22,7 +18,7 @@ Easel makes it easy to start building flexible & modular Backbone apps that can 
 
 ### Overview
 
-Easel is composed of some core tools you should learn before diving in.
+First it would be good to familiarize yourself with the tools Easel is built on.
 
 * [Backbone](http://backbonejs.org/)
 * [Express](http://expressjs.com/)
@@ -30,19 +26,9 @@ Easel is composed of some core tools you should learn before diving in.
 * [Sharify](https://github.com/artsy/sharify)
 * [Benv](https://github.com/artsy/benv)
 
-Some modules come with Easel by default, but could easily be swapped out with your own preference.
+At it's heart Easel is just a Backbone app and therefore relies on an external API as it's data source. This can come in a [variety](http://expressjs.com/) [of](https://github.com/intridea/grape) [forms](http://flask.pocoo.org/), and it's up to you to choose the best technology to serve your data over HTTP.
 
-* [Jade](https://github.com/visionmedia/jade)
-* [Stylus](https://github.com/learnboost/stylus)
-* [Mocha](https://github.com/OliverJAsh/node-jadeify2)
-* [Should](https://github.com/visionmedia/should.js/)
-* [Sinon](http://sinonjs.org/)
-* [Zombie](http://zombie.labnotes.org/)
-* [Jquery](https://github.com/components/jquery)
-
-Easel is a Backbone app at it's heart and therefore relies on an external API as it's data source. This can come in a [variety](https://github.com/intridea/grape) [of](http://expressjs.com/) [forms](http://flask.pocoo.org/), and it's up to you to choose the best technology to serve your data over HTTP.
-
-Once you understand how the above projects work, diving into Easel is just a matter of understanding it's patterns. When you're ready you can delete all of the example files and start clean by running `make clean`.
+Once you understand how the above projects work, diving into Easel is just a matter of understanding it's patterns. When you're ready, you can delete all of the example files and start clean by running `make clean`.
 
 ### Project vs. Apps vs. Components
 
@@ -50,23 +36,23 @@ Monolithic frameworks tend to organize your code by type such as /views, /styles
 
 #### Project
 
-Refers to the root, "global", level and contains the initial setup/server code and project-wide modules such as models, collections, and libraries. Setup is extracted into /lib/setup to encourage modularizing and testing your setup code.
+Refers to the root, "global", level and contains the initial setup/server code and project-wide modules such as models, collections, and libraries. Setup code is extracted into /lib/setup to encourage modularizing and testing your setup code.
 
 #### Apps
 
-Apps are small express applications that are [mounted into the main project(http://vimeo.com/56166857). What delineates apps from one another is they conceptually deal with a certain section of your project, and they are often separated by a full page-refresh.
+Apps are small express applications that are [mounted into the main project](http://vimeo.com/56166857). What delineates apps from one another is they conceptually deal with a certain section of your project, and are often separated by a full page-refresh.
 
 An app could be a complex thick-client "search" app, or a simple static "about" page. The organization of these apps are up to you, for a simple app you may put all of your code into an index.js file, while more complex apps may have their own /models, /components, /stylesheets, /templates, etc. folders.
 
 #### Components
 
-Components are small portions of UI re-used across apps and generally contain a mix of stylesheets, templates, and client-side code. Examples can be complex, like an autocomplete widget, or simple as a headers stylesheet styling h1-h6 tags.
+Components are small portions of UI re-used across apps and generally contain a mix of stylesheets, templates, and client-side code. Examples can be complex, like an autocomplete widget, or as simple as a headers stylesheet styling h1-h6 tags.
 
 ### Models & Collections
 
-Model code is meant to work on the server and client so it must be strictly domain logic, and can't use APIs only available to the browser or node such as accessing the file system or the `XMLHttpRequest` object.
+Model code is meant to work on the server and client so it must strictly be domain logic around your data. Model code can't use APIs only available to the browser or node such as accessing the file system or the `XMLHttpRequest` object.
 
-Backbone.sync is used as a layer over HTTP accessible on both sides. Any HTTP requests therefore need be wrapped in a Backbone class or used by an anonymous instance e.g. `new Backbone.Model({ url: '/api/system/up' }).fetch({ success: //... })`.
+Backbone.sync is used as a layer over HTTP accessible on both sides. Any HTTP requests made in model and collection code therefore need be wrapped in a Backbone class or used by an anonymous instance e.g. `new Backbone.Model({ url: '/api/system/up' }).fetch({ success: //... })`.
 
 ### Libraries
 
@@ -74,17 +60,17 @@ Libraries are a place to store modules that are used across apps and don't perta
 
 ### Testing
 
-Tests are broken up into project-level and app-level tests that are run together in `make test`. This boilerplate comes stocked with a suite of tests as examples to work from.
+Tests are broken up into project-level and app-level tests that are run together in `make test`. This boilerplate comes stocked with a suite of tests, so please take a look around those for examples.
 
 #### Project-level Tests
 
-Project-level tests involve any component, library, model, or collection tests. Because Easel model code can run on the server you can easily test it in node without any extra ceremony. However components and some libraries are meant to be run in the browser. For these you can use [benv](http://github.com/artsy/benv) to set up a fake browser environment and require these modules for unit testing like anything else.
+Project-level tests involve any component, library, model, or collection tests. Because Easel model code can run on the server you can easily test it in node without any extra ceremony. However components and some libraries are meant to be run in the browser. For these you can use [benv](http://github.com/artsy/benv) to set up a fake browser environment and require these modules for unit testing like any other module.
 
 #### App-level Tests
 
 App-level tests can come in a number of different forms, but often involve some combination of route, template, client-side, and integration tests. Given that apps can vary in complexity and number of components they use, it's up to you to decide how to structure and test their parts.
 
-Some common practices are to split up your route handlers into libraries of functions that pass in stubbed request and response objects. Templates can simply be compiled and asserted against the generated html. Client-side code can be unit tested in node using [benv](http://github.com/artsy/benv) (using Backbone views can make this easier). Finally a suite of integration tests use [Zombie](http://zombie.labnotes.org/) to boot up a version of the project with a fake API server found under /test/helpers/integration.
+Some common practices are to split up your route handlers into libraries of functions that pass in stubbed request and response objects. Templates can be directly compiled with jade and asserted against the generated html. Client-side code can be unit tested in node using [benv](http://github.com/artsy/benv) (Backbone views can help wrap code into testable methods). Finally a suite of integration tests use [Zombie](http://zombie.labnotes.org/) to boot up a version of the project with a fake API server found under /test/helpers/integration. All of these techniques ensure your code remains decoupled, your tests run fast, and you stay happy and productive.
 
 ### Build Scripts & Configuration
 
@@ -96,6 +82,4 @@ Configuration is handled entirely by [environment variables](http://en.wikipedia
 
 ### Asset Pipeline
 
-Easel's asset building is mostly handled by [Browserify](https://github.com/substack/node-browserify) and [Stylus](https://github.com/learnboost/stylus) with middleware added to lib/setup and a `make assets` task to build something more production ready.
-
-Place your asset packages in /assets and point your script or style tags to /assets/{filename} in your views and Easel will wire these up to compile on request in development and generate minified assets for production under public/assets.
+Easel's asset building is mostly handled by [Browserify](https://github.com/substack/node-browserify) and [Stylus](https://github.com/learnboost/stylus) with middleware for development and a `make assets` task to build something more production ready. Place your asset packages in /assets and point your script and style tags to /assets/{filename} in your views and Easel will wire the rest up for you.
