@@ -21,8 +21,8 @@ api.get('/repos/:owner/:repo/commits', function(req, res) {
 });
 
 // Spawns a child process with ENV variables that will launch it in "test"
-// mode. This include an API_URL that points to the fake API server mounted
-// under /__api to work around CORs issues with Zombie.
+// mode. This includes an API_URL that points to the fake API server mounted
+// under /__api.
 startServer = module.exports.startServer = function(callback) {
   var envVars  = {
     NODE_ENV: 'test',
