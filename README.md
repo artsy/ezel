@@ -4,7 +4,7 @@ A boilerplate for building large Backbone projects that can run on the server an
 
 ## Introduction
 
-Easel makes it easy to start building flexible & modular Backbone apps that can run in the browser and on the server using [node.js](http://nodejs.org/). Built on popular libraries like [Express](http://expressjs.com/), [Backbone](http://backbonejs.org/), and [Browserify](http://browserify.org/), Easel isn't a framework of it's own, but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.
+Easel makes it easy to start building modular Backbone apps that can run in the browser and on the server using [node.js](http://nodejs.org/). Built on popular libraries like [Express](http://expressjs.com/), [Backbone](http://backbonejs.org/), and [Browserify](http://browserify.org/), Easel isn't a framework of it's own, but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ Easel makes it easy to start building flexible & modular Backbone apps that can 
 2. Download the boilerplate: [Javascript](https://github.com/artsy/easel/archive/master.zip) | [Coffeescript](https://github.com/artsy/easel/archive/master.zip)
 3. Install node modules `npm install`
 4. Run the server `make s`
-5. Visit [localhost::4000](http://localhost:4000) and see an example that uses the Github API.
+5. Visit [localhost:4000](http://localhost:4000) and see an example that uses the Github API.
 
 ### Overview
 
