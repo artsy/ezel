@@ -2,7 +2,7 @@
 
 A boilerplate for Backbone projects that share code server/client and scale through modular architecture.
 
-Built on popular libraries like [Express](http://expressjs.com/), [Backbone](http://backbonejs.org/), and [Browserify](http://browserify.org/), Easel isn't a framework of it's own but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.
+Built on popular libraries like [Express](http://expressjs.com/), [Backbone](http://backbonejs.org/), and [Browserify](http://browserify.org/), Easel isn't a framework or library of it's own but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.
 
 ## Getting Started
 
@@ -84,4 +84,8 @@ Configuration is handled entirely by [environment variables](http://en.wikipedia
 
 ## Asset Pipeline
 
-Easel's asset building is mostly handled by [Browserify](https://github.com/substack/node-browserify) and [Stylus](https://github.com/learnboost/stylus) with middleware for development and a `make assets` task to build something more production ready. Place your asset packages in /assets, point your script and style tags to /assets/<filename> in your views, and Easel will wire the rest up for you.
+Easel's asset building is mostly handled by [Browserify](https://github.com/substack/node-browserify) and [Stylus](https://github.com/learnboost/stylus) with middleware for development and a `make assets` task to output more production ready files. Place your asset packages in /assets, point your script and style tags to /assets/<filename> in your views, and Easel will wire the rest up for you.
+
+Easel's focus on modularity makes it easy to build up light-weight asset packages that are focused for your needs. This combined with rendering on the server makes it a great option for optimizing initial page load.
+
+A common pattern would be to build asset packages per-app. For instance you may have a "search" app that uses assets from the layout component, an auto-complete component, and the search app's client-side code and stylesheets. In this case you would create an /assets/search.styl that imports each piece's stylesheets and an /assets/search.js that would require each piece's javascripts. In the view of the search app you would include `script( src='/assets/search.js' )` and `link( href='/assets/search.css' )` and Easel will wire up the rest.
