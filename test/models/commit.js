@@ -1,3 +1,7 @@
+// 
+// Test your model code like any othe node modules.
+// 
+
 var Commit = require('../../models/commit')
   , Commits = require('../../collections/commits');
 
