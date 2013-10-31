@@ -6,7 +6,7 @@
 //
 
 module.exports = {
-	NODE_ENV: 'development',
+  NODE_ENV: 'development',
   PORT: 4000,
   API_URL: 'https://api.github.com',
   SESSION_SECRET: 'sesson-secret-to-be-overwritten-by-env-var'
