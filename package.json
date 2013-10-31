@@ -23,6 +23,8 @@
     "sinon": "*",
     "benv": "*",
     "zombie": "*",
-    "html5": "*"
+    "html5": "*",
+    "sqwish": "*",
+    "uglify-js": "*"
   }
 }
