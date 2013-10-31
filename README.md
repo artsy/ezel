@@ -1,6 +1,6 @@
 # Easel
 
-A boilerplate for building large Backbone projects that can run on the server and client. Modeled after the architecture of production apps at [Artsy](http://artsy.net/).
+A boilerplate for building large Backbone projects that can run on the server and client.
 
 ## Introduction
 
