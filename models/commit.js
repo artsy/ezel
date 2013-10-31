@@ -1,5 +1,5 @@
 // 
-// Model for Github "commits".
+// Model for GitHub "commits".
 // 
 // [Sharify](https://github.com/artsy/sharify) lets us require the API url
 // and Backbone.sync is replaced with a server-side HTTP module in /lib/setup

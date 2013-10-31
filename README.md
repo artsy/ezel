@@ -12,7 +12,7 @@ Built on popular libraries like [Express](http://expressjs.com/), [Backbone](htt
 2. Download the boilerplate: [Javascript](https://github.com/artsy/easel/archive/master.zip) | [Coffeescript](https://github.com/artsy/easel/archive/master.zip)
 3. Install node modules `npm install`
 4. Run the server `make s`
-5. Visit [localhost:4000](http://localhost:4000) and see an example that uses the Github API.
+5. Visit [localhost:4000](http://localhost:4000) and see an example that uses the GitHub API.
 
 ### Overview
 

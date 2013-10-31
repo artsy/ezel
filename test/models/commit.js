@@ -1,5 +1,5 @@
 // 
-// Test your model code like any othe node modules.
+// Test your model code like any other node modules.
 // 
 
 var Commit = require('../../models/commit')

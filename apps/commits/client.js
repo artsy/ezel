@@ -14,8 +14,8 @@ var Backbone = require('backbone')
   , sd = require('sharify').data
   , Commits = require('../../collections/commits.js')
   , listTemplate = function() {
-    return require('./templates/list.jade').apply(null, arguments)
-  };
+      return require('./templates/list.jade').apply(null, arguments)
+    };
 
 module.exports.CommitsView = CommitsView = Backbone.View.extend({
 

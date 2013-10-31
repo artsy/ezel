@@ -10,7 +10,7 @@ var spawn = require('child_process').spawn
   , express = require('express')
   , child;
 
-// Fake API server currently stubbing responses from Github's API.
+// Fake API server currently stubbing responses from GitHub's API.
 // You will want to edit this to stub your own API's behavior.
 var api = module.exports.api = express()
 
