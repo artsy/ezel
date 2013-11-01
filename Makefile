@@ -10,18 +10,18 @@ BIN = node_modules/.bin
 
 # Start the server
 s:
-	node index.js
+	$(BIN)/coffee index.coffee
 
 # Run all of the project-level tests, followed by app-level tests
 test: assets
-	$(BIN)/mocha $(shell find test -name '*.js' -not -path 'test/helpers/*')
-	$(BIN)/mocha $(shell find apps/*/test -name '*.js' -not -path 'test/helpers/*')
+	$(BIN)/mocha $(shell find test -name '*.coffee' -not -path 'test/helpers/*')
+	$(BIN)/mocha $(shell find apps/*/test -name '*.coffee' -not -path 'test/helpers/*')
 
 # Generate minified assets from the /assets folder and output it to /public.
 assets:
-	$(foreach file, $(shell find assets -name '*.js' | cut -d '.' -f 1), \
-		$(BIN)/browserify $(file).js -t jadeify2 > public/$(file).js; \
-		$(BIN)/uglifyjs public/$(file).js > public/$(file).min.js \
+	$(foreach file, $(shell find assets -name '*.coffee' | cut -d '.' -f 1), \
+		$(BIN)/browserify $(file).coffee -t jadeify2 > public/$(file).coffee; \
+		$(BIN)/uglifyjs public/$(file).coffee > public/$(file).min.coffee \
 	)
 	$(BIN)/stylus assets -o public/assets
 	$(foreach file, $(shell find assets -name '*.styl' | cut -d '.' -f 1), \
@@ -33,15 +33,15 @@ assets:
 # set up your own fake API in test/helpers/integration, and delete this task.
 clean:
 	rm -rf apps/commits/
-	rm collections/commits.js
-	rm models/commit.js
-	rm -rf public/assets/commits.js
+	rm collections/commits.coffee
+	rm models/commit.coffee
+	rm -rf public/assets/commits.coffee
 	rm -rf public/assets/commits.css
-	rm -rf public/assets/commits.min.js
+	rm -rf public/assets/commits.min.coffee
 	rm -rf public/assets/commits.min.css
-	rm assets/commits.js
+	rm assets/commits.coffee
 	rm assets/commits.styl
-	rm test/models/commit.js
+	rm test/models/commit.coffee
 	rm LICENSE.md
 
 .PHONY: test assets

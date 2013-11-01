@@ -10,7 +10,8 @@
     "jade": "*",
     "sharify": "*",
     "Backbone": "*",
-    "backbone-super-sync": "*"
+    "backbone-super-sync": "*",
+    "coffee-script": "*"
   },
   "devDependencies": {
     "components-jquery": "git://github.com/components/jquery.git",
@@ -25,6 +26,7 @@
     "zombie": "*",
     "html5": "*",
     "sqwish": "*",
-    "uglify-js": "*"
+    "uglify-js": "*",
+    "caching-coffeeify": "*"
   }
 }
