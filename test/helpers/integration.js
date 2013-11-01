@@ -16,7 +16,7 @@ var api = module.exports.api = express()
 
 api.get('/repos/:owner/:repo/commits', function(req, res) {
   res.send([
-    { commit: { message: 'Adding a ReEADME.md' } }
+    { commit: { message: 'Adding a README.md' } }
   ]);
 });
 
@@ -37,7 +37,6 @@ startServer = module.exports.startServer = function(callback) {
     stdio: ['ipc'],
     env: envVars
   });
-  if(!callback) callback = function(){};
   child.on('message', callback);
   child.stdout.on('data', function(data) {
     console.log(data.toString());

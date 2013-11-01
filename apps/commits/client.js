@@ -40,9 +40,6 @@ module.exports.CommitsView = CommitsView = Backbone.View.extend({
 module.exports.init = function() {
   new CommitsView({
     el: $('body'),
-    collection: new Commits(sd.COMMITS, {
-      owner: 'artsy',
-      repo: 'flare'
-    })
+    collection: new Commits(sd.COMMITS, { owner: 'artsy', repo: 'flare' })
   });
 };
