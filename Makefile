@@ -33,15 +33,15 @@ assets:
 # set up your own fake API in test/helpers/integration, and delete this task.
 clean:
 	rm -rf apps/commits/
-	rm collections/commits.js
-	rm models/commit.js
-	rm -rf public/assets/commits.js
+	rm collections/commits.coffee
+	rm models/commit.coffee
+	rm -rf public/assets/commits.coffee
 	rm -rf public/assets/commits.css
 	rm -rf public/assets/commits.min.js
 	rm -rf public/assets/commits.min.css
-	rm assets/commits.js
+	rm assets/commits.coffee
 	rm assets/commits.styl
-	rm test/models/commit.js
+	rm test/models/commit.coffee
 	rm LICENSE.md
 
 .PHONY: test assets
