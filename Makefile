@@ -1,11 +1,13 @@
 BIN = node_modules/.bin
 
-w:
+download:
+	curl https://raw.github.com/artsy/ezel/master/README.md > rm.md
+
+w: download
 	$(BIN)/jade index.jade -w
 
-commit:
+commit: download
 	git checkout gh-pages
-	curl https://raw.github.com/artsy/ezel/master/README.md > readme.md
 	$(BIN)/jade index.jade
 	git add .
 	git commit -a
