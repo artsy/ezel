@@ -13,7 +13,7 @@ Built on popular libraries like [Express](http://expressjs.com/), [Backbone](htt
 1. Install [node.js](http://nodejs.org/)
 2. Download the boilerplate: [Javascript](https://github.com/artsy/ezel/archive/master.zip) | [Coffeescript](https://github.com/artsy/ezel/archive/coffeescript.zip)
 3. Rename the folder to your own project and `cd` to the directory
-4 Install node modules `npm install`
+4. Install node modules `npm install`
 5. Run the server `make s`
 6. Visit [localhost:4000](http://localhost:4000) and see an example that uses the GitHub API.
 
@@ -43,7 +43,7 @@ Refers to the root, "global", level and contains the initial setup/server code a
 
 ### Apps
 
-Apps are small express applications that are [mounted into the main project](http://vimeo.com/56166857). What distinguishes apps from one another is they conceptually deal with a certain section of your website, and are often separated by a full page-refresh. As such an app could be a complex thick-client "search" app, or a simple static "about" page.
+Apps are small express applications that are [mounted into the main project](http://vimeo.com/56166857). What distinguishes apps from one another is that they conceptually deal with a certain section of your website, and are often separated by a full page-refresh. As such an app could be a complex thick-client "search" app, or a simple static "about" page.
 
 The organization of these apps are up to you, for a simple app you may put all of your code into one express instance exported in a single index.js file. More complex apps may have their own /models, /components, /stylesheets, /templates, etc. folders. Large web projects often have a wide range of needs on a case by case basis. Instead of trying to solve every problem with the same architecture, Ezel remains flexible and modular so you can pick the right tools and patterns for the job.
 
@@ -59,11 +59,11 @@ Backbone.sync is used as a layer over HTTP accessible on both sides. Any HTTP re
 
 ## Libraries
 
-Libraries are a place to store modules that are used across apps and don't pertain to domain logic or UI that can be better handled by models or components. These can be server only such as a converting an uploaded jpeg file into thumbnails, browser-only such as an HTML5 Canvas library, or even shared such as a date parsing library that can be utilized on both the server and client.
+Libraries are a place to store modules that are used across apps and don't pertain to domain logic or UI that can be better handled by models or components. These can be server only such as a library converting an uploaded jpeg file into thumbnails, browser-only such as an HTML5 Canvas library, or even shared such as a date parsing library that can be utilized on both the server and the client.
 
 ## Testing
 
-Tests are broken up into project-level and app-level tests that are run together in `make test`. This boilerplate comes stocked with a suite of tests for the Githu API example, so please take a look around for examples.
+Tests are broken up into project-level and app-level tests that are run together in `make test`. This boilerplate comes stocked with a suite of tests for the Github API example, so please take a look around for examples.
 
 ### Project-level Tests
 
