@@ -77,8 +77,7 @@ ul {
 
 <h3>Installation</h3>
 
-<ol><li>Install <a href="http://nodejs.org/">node.js</a></li><li>Download the boilerplate: <a href="https://github.com/artsy/ezel/archive/master.zip">Javascript</a> | <a href="https://github.com/artsy/ezel/archive/coffeescript.zip">Coffeescript</a></li><li>Rename the folder to your own project and <code>cd</code> to the directory
-4 Install node modules <code>npm install</code></li><li>Run the server <code>make s</code></li><li>Visit <a href="http://localhost:4000">localhost:4000</a> and see an example that uses the GitHub API.</li></ol>
+<ol><li>Install <a href="http://nodejs.org/">node.js</a></li><li>Download the boilerplate: <a href="https://github.com/artsy/ezel/archive/master.zip">Javascript</a> | <a href="https://github.com/artsy/ezel/archive/coffeescript.zip">Coffeescript</a></li><li>Rename the folder to your own project and <code>cd</code> to the directory</li><li>Install node modules <code>npm install</code></li><li>Run the server <code>make s</code></li><li>Visit <a href="http://localhost:4000">localhost:4000</a> and see an example that uses the GitHub API.</li></ol>
 
 <h3>Overview</h3>
 
@@ -102,7 +101,7 @@ ul {
 
 <h3>Apps</h3>
 
-<p>Apps are small express applications that are <a href="http://vimeo.com/56166857">mounted into the main project</a>. What distinguishes apps from one another is they conceptually deal with a certain section of your website, and are often separated by a full page-refresh. As such an app could be a complex thick-client &quot;search&quot; app, or a simple static &quot;about&quot; page.</p>
+<p>Apps are small express applications that are <a href="http://vimeo.com/56166857">mounted into the main project</a>. What distinguishes apps from one another is that they conceptually deal with a certain section of your website, and are often separated by a full page-refresh. As such an app could be a complex thick-client &quot;search&quot; app, or a simple static &quot;about&quot; page.</p>
 
 <p>The organization of these apps are up to you, for a simple app you may put all of your code into one express instance exported in a single index.js file. More complex apps may have their own /models, /components, /stylesheets, /templates, etc. folders. Large web projects often have a wide range of needs on a case by case basis. Instead of trying to solve every problem with the same architecture, Ezel remains flexible and modular so you can pick the right tools and patterns for the job.</p>
 
@@ -118,11 +117,11 @@ ul {
 
 <h2>Libraries</h2>
 
-<p>Libraries are a place to store modules that are used across apps and don&#39;t pertain to domain logic or UI that can be better handled by models or components. These can be server only such as a converting an uploaded jpeg file into thumbnails, browser-only such as an HTML5 Canvas library, or even shared such as a date parsing library that can be utilized on both the server and client.</p>
+<p>Libraries are a place to store modules that are used across apps and don&#39;t pertain to domain logic or UI that can be better handled by models or components. These can be server only such as a library converting an uploaded jpeg file into thumbnails, browser-only such as an HTML5 Canvas library, or even shared such as a date parsing library that can be utilized on both the server and the client.</p>
 
 <h2>Testing</h2>
 
-<p>Tests are broken up into project-level and app-level tests that are run together in <code>make test</code>. This boilerplate comes stocked with a suite of tests for the Githu API example, so please take a look around for examples.</p>
+<p>Tests are broken up into project-level and app-level tests that are run together in <code>make test</code>. This boilerplate comes stocked with a suite of tests for the Github API example, so please take a look around for examples.</p>
 
 <h3>Project-level Tests</h3>
 
