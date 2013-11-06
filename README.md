@@ -55,7 +55,7 @@ Components are small portions of UI re-used across apps and generally contain a 
 
 Model code is meant to work on the server and client so it must strictly be domain logic around your data. Model code can't use APIs only available to the browser or node such as accessing the file system or the `XMLHttpRequest` object.
 
-Backbone.sync is used as a layer over HTTP accessible on both sides. Any HTTP requests made in model and collection code therefore need be wrapped in a Backbone class or used by an anonymous instance e.g. `new Backbone.Model({ url: '/api/system/up' }).fetch({ success: //... })`.
+Backbone.sync is used as a layer over HTTP accessible on both sides. Any HTTP requests made in model and collection code therefore need to be wrapped in a Backbone class or used by an anonymous instance e.g. `new Backbone.Model({ url: '/api/system/up' }).fetch({ success: //... })`.
 
 ## Libraries
 
