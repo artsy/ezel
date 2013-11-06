@@ -12,7 +12,7 @@ path = require "path"
 
 module.exports = (app) ->
   
-  # Override Backbone to user server-side sync
+  # Override Backbone to use server-side sync
   Backbone.sync = require "backbone-super-sync"
   
   # Setup some initial data for shared modules

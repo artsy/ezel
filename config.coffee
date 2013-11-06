@@ -10,7 +10,6 @@ module.exports =
   NODE_ENV: "development"
   PORT: 4000
   API_URL: "https://api.github.com"
-  SESSION_SECRET: "sesson-secret-to-be-overwritten-by-env-var"
 
 # Override any values with env variables if they exist
 module.exports[key] = (process.env[key] or val) for key, val of module.exports
