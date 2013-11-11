@@ -2,7 +2,7 @@
 
 ![image](https://f.cloud.github.com/assets/555859/1462363/5ce5d010-44f4-11e3-99cd-e7a2f4f0c06d.png)
 
-A boilerplate for Backbone projects that share code server/client and scale through modular architecture.
+A boilerplate for Backbone projects that share code server/client, render server/client, and scale through modular architecture.
 
 Built on popular libraries like [Express](http://expressjs.com/), [Backbone](http://backbonejs.org/), and [Browserify](http://browserify.org/), Ezel isn't a framework or library of it's own but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.
 
