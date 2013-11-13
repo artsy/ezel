@@ -6,6 +6,10 @@ A boilerplate for Backbone projects that share code server/client and scale thro
 
 Built on popular libraries like [Express](http://expressjs.com/), [Backbone](http://backbonejs.org/), and [Browserify](http://browserify.org/), Ezel isn't a framework or library of it's own but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.
 
+## Introduction
+
+Coming soon...
+
 ## Getting Started
 
 ### Installation
@@ -45,11 +49,15 @@ Refers to the root, "global", level and contains the initial setup/server code a
 
 Apps are small express applications that are [mounted into the main project](http://vimeo.com/56166857). What distinguishes apps from one another is that they conceptually deal with a certain section of your website, and are often separated by a full page-refresh. As such an app could be a complex thick-client "search" app, or a simple static "about" page.
 
-The organization of these apps are up to you, for a simple app you may put all of your code into one express instance exported in a single index.js file. More complex apps may have their own /models, /components, /stylesheets, /templates, etc. folders. Large web projects often have a wide range of needs on a case by case basis. Instead of trying to solve every problem with the same architecture, Ezel remains flexible and modular so you can pick the right tools and patterns for the job.
+Apps should strive to be self-contained and shouldn't require into other apps. However, apps will often need project-level modules and so requiring into components or libraries are fine. It's also encouraged to namespace your CSS classes in an app by the app name to avoid conflicts, e.g. apps/user may use `h1.user-name-header`. 
+
+The organization of these apps are up to you, for a simple app you may put all of your code into one express instance exported in a single index.js file. More complex apps may have their own /routes, /stylesheets, etc. folders or even look like it's own Ezel project with components and sub-apps. Large web projects often have a wide range of needs on a case by case basis. Instead of trying to solve every problem with the same architecture, Ezel remains flexible and modular so you can pick the right tools and patterns for the job.
 
 ### Components
 
-Components are small portions of UI re-used across apps and generally contain a mix of stylesheets, templates, and client-side code. These can be thought of like a jQuery UI widget, Bootstrap component, or Backbone view. Examples can be complex, like an autocomplete widget, or as simple as a headers stylesheet styling h1-h6 tags.
+Components are portions of UI re-used across apps and are simply a folder containing a mix of stylesheets, templates, and client-side code that can be required piece-meal. These can be thought of like a [jQuery UI widget](http://jqueryui.com/), [Bootstrap component](http://getbootstrap.com/2.3.2/components.html), [Backbone view](http://backbonejs.org/#View), or [component.js](http://tjholowaychuk.com/post/27984551477/components) component. Components can be as simple a stylesheet and template, more complex like an autocomplete widget with, or even a massive modal window with many sub-components and widgets.
+
+Components, like apps, should strive to be self contained and shouldn't require into other components, apps, models, or collections. It's also encouraged to namespace your CSS classes in a component by the component name to avoid conflicts, e.g. components/autocomplete may use `li.autocomplete-list-item`.
 
 ## Models & Collections
 
@@ -63,15 +71,19 @@ Libraries are a place to store modules that are used across apps and don't perta
 
 ## Testing
 
-Tests are broken up into project-level and app-level tests that are run together in `make test`. This boilerplate comes stocked with a suite of tests for the Github API example, so please take a look around for examples.
+Tests are broken up into project-level, app-level, and component-level tests that are run together in `make test`. This boilerplate comes stocked with a suite of tests for the Github API example, so please take a look around for examples.
 
 ### Project-level Tests
 
-Project-level tests involve any component, library, model, or collection tests. Because Ezel model code can run on the server you can easily test it in node without any extra ceremony. However components and some libraries are meant to be run in the browser. For these you can use [benv](http://github.com/artsy/benv) to set up a fake browser environment and require these modules for unit testing like any other module.
+Project-level tests involve any library, model, or collection tests. Because Ezel model code can run on the server you can easily test it in node without any extra ceremony and testing these parts should be straight-forward. In the case that you need to test model or collection fetching/persisting it's encouraged to stub Backbone.sync.
+
+### Component-level Tests
+
+Components should have their own set of tests under /test folders to ensure their code is nicely contained in one place. Because components contain view code meant to run in a browser you can use [benv](http://github.com/artsy/benv) to set up a fake browser environment and require these modules for unit testing like any other module.
 
 ### App-level Tests
 
-App-level tests can come in a number of different forms, but often involve some combination of route, template, client-side, and integration tests. Given that apps can vary in complexity and number of components they use, it's up to you to decide how to structure and test their parts.
+App-level tests can come in a number of different forms, but often involve some combination of route, template, client-side, and integration tests. Like components apps should have their own tests under /test folders. Given that apps can vary in complexity and number of components they use, it's up to you to decide how to structure and test their parts.
 
 Some common practices are to split up your route handlers into libraries of functions that pass in stubbed request and response objects. Templates can be directly compiled with jade and asserted against the generated html. Client-side code can be unit tested in node using [benv](http://github.com/artsy/benv) (Backbone views can help wrap code into testable methods). Finally a suite of integration tests use [Zombie](http://zombie.labnotes.org/) and boot up a version of the project with a fake API server found under /test/helpers/integration.
 
