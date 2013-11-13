@@ -2,9 +2,25 @@
 
 ![image](https://f.cloud.github.com/assets/555859/1462363/5ce5d010-44f4-11e3-99cd-e7a2f4f0c06d.png)
 
-A boilerplate for Backbone projects that share code server/client, render server/client, and scale through modular architecture.
+A boilerplate for Backbone projects that share code server/client, render the same templates server/client, and scale through modular architecture.
 
-Built on popular libraries like [Express](http://expressjs.com/), [Backbone](http://backbonejs.org/), and [Browserify](http://browserify.org/), Ezel isn't a framework or library of it's own but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.
+## Introduction
+
+Ezel makes it easy to write and maintain Backbone apps that run in the browser and on the server using [node.js](http://nodejs.org/). Built on popular libraries like [Express](http://expressjs.com/), [Backbone](http://backbonejs.org/), and [Browserify](http://browserify.org/), Ezel isn't a framework or library of it's own, but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.
+
+Ezel has three main philosophies…
+
+### Modularity
+
+Instead of managing large complex projects with rigid monolithic structure, Ezel encourages breaking your project up into smaller pieces that are easy to maintain and refactor independently.
+
+### Flexiblity
+
+Don't get locked into choosing between single page app or fully server-side rendered pages. Ezel's modular structure and shared server/client code makes it easy to decide what patterns and tools are best on a case by case basis.
+
+### Isomorphic
+
+Ezel uses [isomorphic](http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/) modules that run in the browser and on the server. This means you can [optimize initial page load](https://blog.twitter.com/2012/improving-performance-twittercom) and SEO by sharing templates that can render on the server or client. This also makes it easy to test all of your code in node.js using [benv](http://github.com/artsy/benv) and [zombie](http://zombie.labnotes.org/) for robust and fast running tests.
 
 ## Getting Started
 
