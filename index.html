@@ -91,13 +91,18 @@ ul {
   margin: 20px 0 0 -280px;
 }
 @media (max-width: 600px) {
+  #forkme img {
+    z-index: 2;
+  }
   #container {
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
   }
   #container img {
-    width: 100%;
+    max-height: 400px;
+    width: auto;
+    max-width: 100%;
   }
   #menu {
     display: none;
@@ -109,11 +114,12 @@ ul {
   }
   h1 {
     position: relative;
+    margin-top: 0;
     left: 0;
     top: 0;
   }
 }
-</style></head><body><a href="https://github.com/artsy/ezel"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a><div id="container"><nav id="menu"><a href="#introduction" class="active">Introduction</a><a href="#getting started">Getting Started</a><a href="#project vs. apps vs. components">Project vs. Apps vs. Components</a><a href="#models &amp; collections">Models &amp; Collections</a><a href="#libraries">Libraries</a><a href="#testing">Testing</a><a href="#build scripts &amp; configuration">Build Scripts &amp; Configuration</a><a href="#asset pipeline">Asset Pipeline</a></nav><h1>Ezel</h1>
+</style></head><body><a id="forkme" href="https://github.com/artsy/ezel"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a><div id="container"><nav id="menu"><a href="#introduction" class="active">Introduction</a><a href="#getting started">Getting Started</a><a href="#project vs. apps vs. components">Project vs. Apps vs. Components</a><a href="#models &amp; collections">Models &amp; Collections</a><a href="#libraries">Libraries</a><a href="#testing">Testing</a><a href="#build scripts &amp; configuration">Build Scripts &amp; Configuration</a><a href="#asset pipeline">Asset Pipeline</a></nav><h1>Ezel</h1>
 
 <p><img alt="image" src="https://f.cloud.github.com/assets/555859/1462363/5ce5d010-44f4-11e3-99cd-e7a2f4f0c06d.png"></p>
 
