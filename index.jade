@@ -49,6 +49,8 @@ html
           
           // Otherwise un-locked
           } else {
+            $('#menu a').removeClass('active');
+            $('[href="#introduction"]').addClass('active');
             $('#menu').removeClass('fixed');
           }
         });
