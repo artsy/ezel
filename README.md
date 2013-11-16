@@ -1,4 +1,4 @@
-# Ezel
+# Ezel.js
 
 ![image](https://f.cloud.github.com/assets/555859/1462363/5ce5d010-44f4-11e3-99cd-e7a2f4f0c06d.png)
 
