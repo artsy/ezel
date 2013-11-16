@@ -1,14 +1,14 @@
 BIN = node_modules/.bin
 
-download:
-	curl https://raw.github.com/artsy/ezel/master/README.md > rm.md
-
-w: download
+w:
 	$(BIN)/jade index.jade -w
 
-commit: download
-	git checkout gh-pages
-	$(BIN)/jade index.jade
+commit:
+	node build.js
 	git add .
 	git commit -a
 	git push git@github.com:artsy/ezel.git gh-pages
+
+open:
+	node build.js
+	open index.html

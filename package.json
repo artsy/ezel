@@ -5,6 +5,7 @@
     "jade": "*",
     "coffee-script": "*",
     "stylus": "*",
-    "markdown": "*"
+    "markdown": "*",
+    "cheerio": "*"
   }
 }
