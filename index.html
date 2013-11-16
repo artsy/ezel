@@ -93,15 +93,25 @@ ul {
 #forkme img {
   position: fixed;
 }
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   #forkme img {
     position: absolute;
     z-index: 2;
   }
+  #menu {
+    display: none;
+  }
+  #container {
+    padding: 40px 20px 20px 20px;
+  }
+  h1 {
+    left: 420px;
+  }
+}
+@media (max-width: 600px) {
   #container {
     width: 100%;
     margin: 0;
-    padding: 40px 20px 20px 20px;
     box-sizing: border-box;
   }
   #container img {
