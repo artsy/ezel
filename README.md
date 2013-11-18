@@ -20,7 +20,7 @@ Don't get locked into choosing between single page app or fully server-side rend
 
 ### Run on both sides
 
-Ezel [shares javascript modules that run in the browser and on the server](http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/). This means you can [optimize initial page load](https://blog.twitter.com/2012/improving-performance-twittercom) and SEO by sharing templates that can render on the server or client. This also makes it easy to test all of your code in node.js using [benv](http://github.com/artsy/benv) and [zombie](http://zombie.labnotes.org/) for robust, fast, and easy to set up tests.
+Ezel shares javascript modules that run in the [browser and on the server](http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/). This means you can [optimize initial page load](https://blog.twitter.com/2012/improving-performance-twittercom) and SEO by sharing templates that can render on the server or client. This also makes it easy to test all of your code in node.js using [benv](http://github.com/artsy/benv) and [zombie](http://zombie.labnotes.org/) for robust, fast, and easy to set up tests.
 
 ## Getting Started
 
