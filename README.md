@@ -6,7 +6,7 @@ A boilerplate for Backbone projects that share code server/client, render server
 
 ## Introduction
 
-Ezel makes it easy to write and maintain Backbone apps that run in the browser and on the server using [node.js](http://nodejs.org/). Built on popular libraries like [Express](http://expressjs.com/), [Backbone](http://backbonejs.org/), and [Browserify](http://browserify.org/), Ezel isn't a framework or library of it's own, but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.
+Ezel makes it easy to write and maintain Backbone apps that run in the browser and on the server using [node.js](http://nodejs.org/). Built on popular libraries like [Express](http://expressjs.com/), [Backbone](http://backbonejs.org/), and [Browserify](http://browserify.org/), Ezel isn't a framework or library of its own, but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.
 
 Ezel has three main philosophies...
 
@@ -43,9 +43,9 @@ First it would be good to familiarize yourself with the tools Ezel is built on.
 * [Sharify](https://github.com/artsy/sharify)
 * [Benv](https://github.com/artsy/benv)
 
-At it's heart Ezel is just a Backbone app and therefore relies on an external API as it's data source. This can come in a [variety](http://expressjs.com/) [of](https://github.com/intridea/grape) [forms](http://flask.pocoo.org/) and it's up to you to choose the best technology to serve your data over HTTP.
+At its heart Ezel is just a Backbone app and therefore relies on an external API as its data source. This can come in a [variety](http://expressjs.com/) [of](https://github.com/intridea/grape) [forms](http://flask.pocoo.org/) and it's up to you to choose the best technology to serve your data over HTTP.
 
-Once you understand how the above tools work, diving into Ezel is just a matter of understanding it's patterns. After this, when you're ready, you can delete all of the example files and start clean by running `make clean`.
+Once you understand how the above tools work, diving into Ezel is just a matter of understanding its patterns. After this, when you're ready, you can delete all of the example files and start clean by running `make clean`.
 
 ## Project vs. Apps vs. Components
 
@@ -63,7 +63,7 @@ Apps are small express applications that are [mounted into the main project](htt
 
 Apps should strive to be self-contained and shouldn't require into other apps. However, apps will often need project-level modules so requiring into components, models, collections and libraries are fine. It's also encouraged to namespace your CSS classes inside an app by the app name to avoid conflicts, e.g. apps/user may use `h1.user-header`. 
 
-The organization of these apps are up to you, for a simple app you may put all of your code into one express instance exported in a single index.js file. More complex apps may have their own /routes, /stylesheets, etc. folders or even look like it's own Ezel project with components and sub-apps.
+The organization of these apps are up to you, for a simple app you may put all of your code into one express instance exported in a single index.js file. More complex apps may have their own /routes, /stylesheets, etc. folders or even look like its own Ezel project with components and sub-apps.
 
 Large web projects often have a wide range of needs on a case by case basis. Instead of trying to solve every problem with the same architecture, Ezel remains flexible and modular so you can pick the right tools and patterns for the job.
 
