@@ -17,17 +17,18 @@ express = require "express"
 # Spawns a child process with ENV variables that will launch it in "test"
 # mode. This includes an API_URL that points to the fake API server mounted
 # under /__api.
-@startServer = (callback) ->
+@startServer = (callback) =>
+  return callback() if @child?
   envVars =
     NODE_ENV: "test"
-    API_URL: "http://localhost:5000/__api"
+    ARTSY_URL: "http://localhost:5000/__api"
     PORT: 5000
   envVars[k] = val for k, val of process.env when not envVars[k]?
   @child = spawn "make", ["s"],
     customFds: [0, 1, 2]
     stdio: ["ipc"]
     env: envVars
-  @child.on "message", callback
+  @child.on "message", -> callback()
   @child.stdout.on "data", (data) -> console.log data.toString()
 
 # Closes the server child process, used in an `after` hook and on 
