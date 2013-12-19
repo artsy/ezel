@@ -49,7 +49,7 @@ describe('CommitsView', function() {
 
   beforeEach(function(done) {
     view = new CommitsView({
-      el: $('body'),
+      el: 'body',
       collection: new Commits([], { owner: 'artsy', repo: 'flare' })
     })
     done();
