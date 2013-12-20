@@ -1,27 +1,20 @@
-// 
-// Tests for the client-side code of the commits app. Because 
-// [Browserify](https://github.com/substack/node-browserify) allows us to 
+//
+// Tests for the client-side code of the commits app. Because
+// [Browserify](https://github.com/substack/node-browserify) allows us to
 // write our client-side in modules, testing becomes a lot easier. There are
 // still some obstacles to unit testing client-side code such as not having
 // a DOM available. In this case we use [benv](https://github.com/artsy/benv)
 // to create a more suitable environment for unit testing client-side code in
 // node.js.
-// 
+//
 
 var benv = require('benv')
   , sinon = require('sinon')
   , Commits = require('../../../collections/commits')
   , resolve = require('path').resolve;
 
-// Tells Benv to expose jquery as a global because our code depends on it. 
-benv.globals = function() {
-  return {
-    $: require('components-jquery')
-  };
-};
-
 describe('CommitsView', function() {
-  
+
   var CommitsView, view;
 
   // In this before hook we setup our browser environemnt using
@@ -38,6 +31,9 @@ describe('CommitsView', function() {
           repo: 'bar'
         }).models,
       }, function() {
+        benv.expose({
+          $: require('components-jquery')
+        });
         CommitsView = benv.requireWithJadeify(
           '../client.js',
           ['listTemplate']
@@ -47,16 +43,16 @@ describe('CommitsView', function() {
     });
   });
 
+  after(function() {
+    benv.teardown();
+  });
+
   beforeEach(function(done) {
     view = new CommitsView({
-      el: 'body',
+      el: $('body'),
       collection: new Commits([], { owner: 'artsy', repo: 'flare' })
     })
     done();
-  });
-
-  afterEach(function() {
-    benv.teardown();
   });
 
   describe('#render', function() {
