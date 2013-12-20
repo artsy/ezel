@@ -4,13 +4,13 @@ html
     title Ezel
     link( href='http://fonts.googleapis.com/css?family=Quattrocento', rel='stylesheet', type='text/css' )
     meta( name='viewport', content='width=device-width', initial-scale='1.0,user-scalable=no' )
-    
+
     include styles.styl
   body
     a#forkme( href='https://github.com/artsy/ezel' )
       img(
-        style='top: 0; right: 0; border: 0;',
-        src='https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png',
+        style='top: 0; left: 0; border: 0;',
+        src='https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png',
         alt='Fork me on GitHub'
       )
     #container
@@ -30,7 +30,7 @@ html
           // If you scroll past the introduction, start the pop-lock
           if ($(window).scrollTop() > $('#introduction').offset().top) {
             $('#menu').addClass('fixed');
-            
+
             // If you get to the bottom the last menu item is highlighted
             if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
               curId =$('h2:last-of-type').attr('id');
@@ -44,9 +44,9 @@ html
 
             // Highlight the left-hand nav item
             $('#menu a').removeClass('active');
-            var sel = '[href="#' + curId + '"]'; 
+            var sel = '[href="#' + curId + '"]';
             $(sel).addClass('active');
-          
+
           // Otherwise un-locked
           } else {
             $('#menu a').removeClass('active');
