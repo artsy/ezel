@@ -1,10 +1,10 @@
-// 
+//
 // Integration test helper that makes it easy to write fast integration tests.
 // One of the ways it does this is by providing the methods `startServer` and
 // `closeServer` that will spawn a child process of this project. This means
 // a version of this project server will run on localhost:5000 using a fake
 // API server exposed below a `api`.
-// 
+//
 
 var spawn = require('child_process').spawn
   , express = require('express')
@@ -24,6 +24,7 @@ api.get('/repos/:owner/:repo/commits', function(req, res) {
 // mode. This includes an API_URL that points to the fake API server mounted
 // under /__api.
 startServer = module.exports.startServer = function(callback) {
+  if (child) return callback();
   var envVars  = {
     NODE_ENV: 'test',
     API_URL: 'http://localhost:5000/__api',
@@ -37,13 +38,13 @@ startServer = module.exports.startServer = function(callback) {
     stdio: ['ipc'],
     env: envVars
   });
-  child.on('message', callback);
+  child.on('message', function() { callback() });
   child.stdout.on('data', function(data) {
     console.log(data.toString());
   });
 }
 
-// Closes the server child process, used in an `after` hook and on 
+// Closes the server child process, used in an `after` hook and on
 // `process.exit` in case the test suite is interupted.
 closeServer = module.exports.closeServer = function() {
   if(child) child.kill();
@@ -51,11 +52,11 @@ closeServer = module.exports.closeServer = function() {
 }
 process.on('exit', closeServer);
 
-// You can debug your integration app and run this app server by running 
+// You can debug your integration app and run this app server by running
 // this module directly and opening up localhost:5000.
 // e.g. `node test/helpers/integration.js`
 if(module != require.main) return;
-startServer(function() { 
+startServer(function() {
   child.stdout.on('data', function(data) {
     console.log(data.toString());
   });
