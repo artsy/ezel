@@ -1,11 +1,11 @@
-# 
+#
 # The client-side code for the commits page.
-# 
+#
 # [Browserify](https://github.com/substack/node-browserify) lets us write this
 # code as a common.js module, which means requiring dependecies instead of
 # relying on globals. This module exports the Backbone view and an init
 # function that gets used in /assets/commits.coffee. Doing this allows us to
-# easily unit test these components, and makes the code more modular and 
+# easily unit test these components, and makes the code more modular and
 # composable in general.
 #
 
@@ -16,7 +16,7 @@ Commits = require "../../collections/commits.coffee"
 listTemplate = -> require("./templates/list.jade") arguments...
 
 module.exports.CommitsView = class CommitsView extends Backbone.View
-  
+
   initialize: ->
     @collection.on "sync", @render
 
@@ -24,7 +24,7 @@ module.exports.CommitsView = class CommitsView extends Backbone.View
     @$("#commits-list").html listTemplate(commits: @collection.models)
 
   events:
-    "change #commits-repo-input": "changeRepo"
+    "change .search-input": "changeRepo"
 
   changeRepo: (e) ->
     @collection.repo = $(e.target).val()
