@@ -25,7 +25,7 @@ describe('CommitsView', function() {
     benv.setup(function() {
       benv.render(resolve(__dirname, '../templates/index.jade'), {
         sd: {},
-        sharifyScript: function() {},
+        sharify: { script: function() {} },
         commits: new Commits([], {
           owner: 'foo',
           repo: 'bar'
