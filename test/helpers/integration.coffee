@@ -1,10 +1,10 @@
-# 
+#
 # Integration test helper that makes it easy to write fast integration tests.
 # One of the ways it does this is by providing the methods `startServer` and
 # `closeServer` that will spawn a child process of this project. This means
 # a version of this project server will run on localhost:5000 using a fake
 # API server exposed below a `api`.
-# 
+#
 spawn = require("child_process").spawn
 express = require "express"
 
@@ -21,7 +21,7 @@ express = require "express"
   return callback() if @child?
   envVars =
     NODE_ENV: "test"
-    ARTSY_URL: "http://localhost:5000/__api"
+    API_URL: "http://localhost:5000/__api"
     PORT: 5000
   envVars[k] = val for k, val of process.env when not envVars[k]?
   @child = spawn "make", ["s"],
@@ -31,7 +31,7 @@ express = require "express"
   @child.on "message", -> callback()
   @child.stdout.on "data", (data) -> console.log data.toString()
 
-# Closes the server child process, used in an `after` hook and on 
+# Closes the server child process, used in an `after` hook and on
 # `process.exit` in case the test suite is interupted.
 @closeServer = =>
   @child?.kill()
@@ -39,7 +39,7 @@ express = require "express"
 
 process.on "exit", @closeServer
 
-# You can debug your integration app and run this app server by running 
+# You can debug your integration app and run this app server by running
 # this module directly and opening up localhost:5000.
 # e.g. `coffee test/helpers/integration.coffee`
 return unless module is require.main
