@@ -70,7 +70,7 @@ describe('CommitsView', function() {
 
     it('changes the repo and fetches', function() {
       sinon.stub(view.collection, 'fetch');
-      view.$('#commits-repo-input').val('Garner').trigger('change');
+      view.$('.search-input').val('Garner').trigger('change');
       view.collection.repo.should.equal('Garner');
       view.collection.fetch.called.should.be.ok;
     });

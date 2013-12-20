@@ -1,6 +1,6 @@
 #
 # Make -- the OG build tool.
-# Add any build tasks here and abstract complex build scripts into `lib` that 
+# Add any build tasks here and abstract complex build scripts into `lib` that
 # can be run in a Makefile task like `coffee lib/build_script`.
 #
 # Remember to set your text editor to use 4 size non-soft tabs.
@@ -41,6 +41,7 @@ clean:
 	rm -rf public/assets/commits.css
 	rm -rf public/assets/commits.min.js
 	rm -rf public/assets/commits.min.css
+	rm -rf components/search
 	rm assets/commits.js
 	rm assets/commits.styl
 	rm test/models/commit.js

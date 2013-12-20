@@ -1,13 +1,13 @@
-// 
+//
 // The client-side code for the commits page.
-// 
+//
 // [Browserify](https://github.com/substack/node-browserify) lets us write this
 // code as a common.js module, which means requiring dependecies instead of
 // relying on globals. This module exports the Backbone view and an init
 // function that gets used in /assets/commits.js. Doing this allows us to
-// easily unit test these components, and makes the code more modular and 
+// easily unit test these components, and makes the code more modular and
 // composable in general.
-// 
+//
 
 var Backbone = require('backbone')
   , $ = Backbone.$ = require('components-jquery')
@@ -26,11 +26,11 @@ module.exports.CommitsView = CommitsView = Backbone.View.extend({
   render: function() {
     this.$('#commits-list').html(listTemplate({ commits: this.collection.models }));
   },
-  
+
   events: {
-    'change #commits-repo-input': 'changeRepo'
+    'change .search-input': 'changeRepo'
   },
-  
+
   changeRepo: function(e) {
     this.collection.repo = $(e.target).val();
     this.collection.fetch();
