@@ -2,7 +2,7 @@
 
 ![image](https://f.cloud.github.com/assets/555859/1462363/5ce5d010-44f4-11e3-99cd-e7a2f4f0c06d.png)
 
-A boilerplate for Backbone projects that share code server/client, render server/client, and scale through modular architecture. Used at [Artsy](http://artsy.net) to boostrap new projects, see [our blog post](http://artsy.github.io/blog/2013/11/30/rendering-on-the-server-and-client-in-node-dot-js/) on it.
+A boilerplate for Backbone projects that share code server/client, render server/client, and scale through modular architecture. Used at [Artsy](http://artsy.net) to bootstap new projects, see [our blog post](http://artsy.github.io/blog/2013/11/30/rendering-on-the-server-and-client-in-node-dot-js/) on it.
 
 ## Introduction
 
