@@ -1,3 +1,5 @@
+include ../../../components/search/mixin
+
 doctype 5
 html
   head
@@ -5,7 +7,7 @@ html
     link( type='text/css', rel='stylesheet', href=('/assets/commits' + sd.CSS_EXT) )
   body
     h1 See commits for Artsy repos using the GitHub API!
-    input#commits-repo-input( placeholder='Try "flux" or "garner" for starters, and hit then enter.' )
+    mixin search('Try "flux" or "garner" for starters, and hit then enter.')
     ul#commits-list
       include list
     #scripts
