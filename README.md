@@ -6,7 +6,7 @@ A boilerplate for Backbone projects that share code server/client, render server
 
 ## Introduction
 
-Ezel makes it easy to write and maintain Backbone apps that run in the browser and on the server using [node.js](http://nodejs.org/). Built on popular libraries like [Express](http://expressjs.com/), [Backbone](http://backbonejs.org/), and [Browserify](http://browserify.org/), Ezel isn't a framework or library of its own, but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.
+Ezel makes it easy to write and maintain Backbone apps that run in the browser and on the server using [Node.js](http://nodejs.org/). Built on popular libraries like [Express](http://expressjs.com/), [Backbone](http://backbonejs.org/), and [Browserify](http://browserify.org/), Ezel isn't a framework or library of its own, but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.
 
 Ezel has three main philosophies...
 
