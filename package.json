@@ -8,7 +8,7 @@
     "express": "*",
     "jade": "*",
     "sharify": "*",
-    "Backbone": "*",
+    "backbone": "*",
     "backbone-super-sync": "*"
   },
   "devDependencies": {
