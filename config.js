@@ -5,9 +5,15 @@
 // for development.
 //
 
+var ezelPort = process.env.EZEL_PORT;
+
+if (!ezelPort) {
+  throw new Error('You must set the EZEL_PORT env variable');
+}
+
 module.exports = {
   NODE_ENV: 'development',
-  PORT: 4000,
+  PORT: ezelPort,
   API_URL: 'https://api.github.com'
 }
 

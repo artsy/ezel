@@ -30,8 +30,9 @@ Ezel [shares javascript modules that run in the browser and on the server](http:
 2. Download the boilerplate: [Javascript](https://github.com/artsy/ezel/archive/master.zip) | [Coffeescript](https://github.com/artsy/ezel/archive/coffeescript.zip)
 3. Rename the folder to your own project and `cd` to the directory
 4. Install node modules `npm install`
-5. Run the server `make s`
-6. Visit [localhost:4000](http://localhost:4000) and see an example that uses the GitHub API.
+5. Set your `EZEL_PORT` environment variable (e.g. 4040)
+6. Run the server `npm start`
+7. Visit [localhost:4040](http://localhost:4040) (or other port) and see an example that uses the GitHub API.
 
 ### Overview
 
