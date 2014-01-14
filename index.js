@@ -4,16 +4,19 @@
 // be abstracted into modules under /lib.
 // 
 
-var c = require('./config')
-  , express = require('express')
-  , setup = require('./lib/setup');
+var c = require('./config'), 
+    express = require('express'), 
+    setup = require('./lib/setup'),
+    exec = require('child_process').exec;
 
-var app = module.exports = express();
-setup(app);
+exec('make assets', function(){
+  var app = module.exports = express();
+  setup(app);
 
-// Start the server and send a message to IPC for the integration test 
-// helper to hook into. 
-app.listen(c.PORT, function() {
-  console.log('Listening on port ' + c.PORT);
-  if(process.send) process.send('listening');
+  // Start the server and send a message to IPC for the integration test 
+  // helper to hook into. 
+  app.listen(c.PORT, function() {
+    console.log('Listening on port ' + c.PORT);
+    if(process.send) process.send('listening');
+  });
 });

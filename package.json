@@ -2,20 +2,21 @@
   "name": "ezel",
   "version": "0.0.1",
   "scripts": {
-    "start": "make s"
+    "start": "proxychains ./node_modules/.bin/nodemon index.js -e js,css,jade,styl"
   },
   "dependencies": {
     "express": "*",
     "jade": "*",
     "sharify": "*",
     "backbone": "*",
-    "backbone-super-sync": "*"
+    "backbone-super-sync": "*",
+    "nodemon": "~1.0.8"
   },
   "devDependencies": {
     "components-jquery": "git://github.com/components/jquery.git",
     "browserify": "*",
     "stylus": "*",
-    "jadeify2": "*",
+    "jadeify2": "git://github.com/jameswomack/node-jadeify2.git",
     "browserify-dev-middleware": "*",
     "should": "*",
     "mocha": "*",
