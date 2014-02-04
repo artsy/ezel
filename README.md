@@ -69,9 +69,9 @@ Large web projects often have a wide range of needs on a case by case basis. Ins
 
 ### Components
 
-Components are portions of UI re-used across apps and are simply a folder containing a mix of stylesheets, templates, and client-side code that can be required piece-meal. These can be thought of like a [jQuery UI widget](http://jqueryui.com/), [Bootstrap component](http://getbootstrap.com/2.3.2/components.html), [Backbone view](http://backbonejs.org/#View), or [component.js](http://tjholowaychuk.com/post/27984551477/components) component. Components can be as simple a stylesheet and template, more complex like an autocomplete widget, or even a massive modal window with many sub-components.
+Components are portions of UI re-used across apps and are simply a folder containing a mix of stylesheets, templates, and client-side code that can be required piece-meal. These can be thought of like a [jQuery UI widget](http://jqueryui.com/), [Bootstrap component](http://getbootstrap.com/2.3.2/components.html), [Backbone view](http://backbonejs.org/#View), or [component.js](http://tjholowaychuk.com/post/27984551477/components) component. Components can be as simple a stylesheet and template, more complex like an autocomplete widget, or even a massive modal window pieced together from smaller components.
 
-Components, like apps, should strive to be self contained and shouldn't require into other components or apps. It's also encouraged to namespace your CSS classes in a component by the component name to avoid conflicts, e.g. components/autocomplete may use `li.autocomplete-list-item`.
+Components should strive to be a library of self-contained UI and therefore shouldn't require into apps, however, it's totally fine to require into /lib or other components. It's also encouraged to namespace your CSS classes in a component by the component name to avoid conflicts, e.g. components/autocomplete may use `li.autocomplete-list-item`.
 
 ## Models & Collections
 
