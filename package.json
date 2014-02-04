@@ -12,10 +12,10 @@
     "backbone-super-sync": "*"
   },
   "devDependencies": {
-    "components-jquery": "git://github.com/components/jquery.git",
+    "jquery": "*",
     "browserify": "*",
     "stylus": "*",
-    "jadeify2": "*",
+    "jadeify": "*",
     "browserify-dev-middleware": "*",
     "should": "*",
     "mocha": "*",

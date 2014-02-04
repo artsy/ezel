@@ -32,7 +32,7 @@ describe('CommitsView', function() {
         }).models,
       }, function() {
         benv.expose({
-          $: require('components-jquery')
+          $: require('jquery')
         });
         CommitsView = benv.requireWithJadeify(
           '../client.js',

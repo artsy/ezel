@@ -22,7 +22,7 @@ test: assets
 assets:
 	mkdir -p public/assets
 	$(foreach file, $(shell find assets -name '*.js' | cut -d '.' -f 1), \
-		$(BIN)/browserify $(file).js -t jadeify2 > public/$(file).js; \
+		$(BIN)/browserify $(file).js -t jadeify > public/$(file).js; \
 		$(BIN)/uglifyjs public/$(file).js > public/$(file).min.js \
 	)
 	$(BIN)/stylus assets -o public/assets
