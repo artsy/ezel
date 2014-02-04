@@ -15,7 +15,7 @@ resolve = require("path").resolve
 
 # Tells Benv to expose jquery as a global because our code depends on it.
 benv.globals = ->
-  $: require("components-jquery")
+  $: require("jquery")
 
 describe "CommitsView", ->
 

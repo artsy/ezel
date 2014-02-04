@@ -10,7 +10,7 @@
 #
 
 Backbone = require "backbone"
-$ = Backbone.$ = require "components-jquery"
+$ = Backbone.$ = require "jquery"
 sd = require("sharify").data
 Commits = require "../../collections/commits.coffee"
 listTemplate = -> require("./templates/list.jade") arguments...

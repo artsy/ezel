@@ -1,6 +1,6 @@
 {
   "name": "ezel",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "start": "make s"
   },
@@ -13,10 +13,10 @@
     "coffee-script": "*"
   },
   "devDependencies": {
-    "components-jquery": "git://github.com/components/jquery.git",
+    "jquery": "*",
     "browserify": "*",
     "stylus": "*",
-    "jadeify2": "*",
+    "jadeify": "*",
     "browserify-dev-middleware": "*",
     "should": "*",
     "mocha": "*",

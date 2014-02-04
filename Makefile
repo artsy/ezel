@@ -21,7 +21,7 @@ test: assets
 assets:
 	mkdir -p public/assets
 	$(foreach file, $(shell find assets -name '*.coffee' | cut -d '.' -f 1), \
-		$(BIN)/browserify $(file).coffee -t jadeify2 -t caching-coffeeify > public/$(file).js; \
+		$(BIN)/browserify $(file).coffee -t jadeify -t caching-coffeeify > public/$(file).js; \
 		$(BIN)/uglifyjs public/$(file).js > public/$(file).min.js \
 	)
 	$(BIN)/stylus assets -o public/assets
