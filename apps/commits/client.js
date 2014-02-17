@@ -9,13 +9,13 @@
 // composable in general.
 //
 
-var Backbone = require('backbone')
-  , $ = Backbone.$ = require('jquery')
-  , sd = require('sharify').data
-  , Commits = require('../../collections/commits.js')
-  , listTemplate = function() {
+var Backbone = require('backbone'),
+    sd = require('sharify').data,
+    Commits = require('../../collections/commits.js'),
+    listTemplate = function() {
       return require('./templates/list.jade').apply(null, arguments)
     };
+Backbone.$ = $;
 
 module.exports.CommitsView = CommitsView = Backbone.View.extend({
 
