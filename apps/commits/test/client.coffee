@@ -13,16 +13,10 @@ sinon = require("sinon")
 Commits = require("../../../collections/commits")
 resolve = require("path").resolve
 
-# Tells Benv to expose jquery as a global because our code depends on it.
-benv.globals = ->
-  $: require("jquery")
-
 describe "CommitsView", ->
 
   # In this before hook we setup our browser environemnt using
-  # [benv](https://github.com/artsy/benv). This and the above `benv.globals=`
-  # may be refactored into a /test/helpers/client module to DRY up
-  # some setup. For this example we keep it simple.
+  # [benv](https://github.com/artsy/benv).
   before (done) ->
     benv.setup =>
       benv.render resolve(__dirname, "../templates/index.jade"),
@@ -30,6 +24,7 @@ describe "CommitsView", ->
         sharify: script: ->
         commits: new Commits([], { owner: "foo", repo: "bar" }).models
       , =>
+        benv.expose $: require('jquery')(window)
         @CommitsView = benv.requireWithJadeify(
           "../client.coffee",
           ["listTemplate"]
