@@ -1,10 +1,12 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var Backbone, Commits, CommitsView, listTemplate, sd, _ref,
+var $, Backbone, Commits, CommitsView, listTemplate, sd, _ref,
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
 Backbone = require("backbone");
+
+$ = require('jquery');
 
 Backbone.$ = $;
 
@@ -59,7 +61,7 @@ module.exports.init = function() {
 };
 
 
-},{"../../collections/commits.coffee":4,"./templates/list.jade":2,"backbone":6,"sharify":11}],2:[function(require,module,exports){
+},{"../../collections/commits.coffee":4,"./templates/list.jade":2,"backbone":6,"jquery":10,"sharify":11}],2:[function(require,module,exports){
 var jade = require("jade/runtime");
 
 module.exports = function template(locals) {
@@ -154,7 +156,7 @@ module.exports = Commit = (function(_super) {
 
 
 },{"backbone":6,"sharify":11}],6:[function(require,module,exports){
-//     Backbone.js 1.1.1
+//     Backbone.js 1.1.2
 
 //     (c) 2010-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 //     Backbone may be freely distributed under the MIT license.
@@ -173,9 +175,8 @@ module.exports = Commit = (function(_super) {
 
   // Next for Node.js or CommonJS. jQuery may not be needed as a module.
   } else if (typeof exports !== 'undefined') {
-    var _ = require('underscore'), $;
-    try { $ = require('jquery'); } catch(e) {}
-    factory(root, exports, _, $);
+    var _ = require('underscore');
+    factory(root, exports, _);
 
   // Finally, as a browser global.
   } else {
@@ -198,7 +199,7 @@ module.exports = Commit = (function(_super) {
   var splice = array.splice;
 
   // Current version of the library. Keep in sync with `package.json`.
-  Backbone.VERSION = '1.1.1';
+  Backbone.VERSION = '1.1.2';
 
   // For Backbone's purposes, jQuery, Zepto, Ender, or My Library (kidding) owns
   // the `$` variable.
@@ -1449,7 +1450,7 @@ module.exports = Commit = (function(_super) {
                      return optional ? match : '([^/?]+)';
                    })
                    .replace(splatParam, '([^?]*?)');
-      return new RegExp('^' + route + '(?:\\?(.*))?$');
+      return new RegExp('^' + route + '(?:\\?([\\s\\S]*))?$');
     },
 
     // Given a route, and a URL fragment that it matches, return the array of
@@ -1606,7 +1607,7 @@ module.exports = Commit = (function(_super) {
     // but possibly useful for unit testing Routers.
     stop: function() {
       Backbone.$(window).off('popstate', this.checkUrl).off('hashchange', this.checkUrl);
-      clearInterval(this._checkUrlInterval);
+      if (this._checkUrlInterval) clearInterval(this._checkUrlInterval);
       History.started = false;
     },
 
@@ -1764,7 +1765,7 @@ module.exports = Commit = (function(_super) {
 
 }));
 
-},{"jquery":10,"underscore":7}],7:[function(require,module,exports){
+},{"underscore":7}],7:[function(require,module,exports){
 //     Underscore.js 1.6.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors

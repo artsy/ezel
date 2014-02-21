@@ -24,7 +24,7 @@ describe "CommitsView", ->
         sharify: script: ->
         commits: new Commits([], { owner: "foo", repo: "bar" }).models
       , =>
-        benv.expose $: require('jquery')(window)
+        benv.expose $: require('jquery')
         @CommitsView = benv.requireWithJadeify(
           "../client.coffee",
           ["listTemplate"]

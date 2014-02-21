@@ -10,6 +10,7 @@
 #
 
 Backbone = require "backbone"
+$ = require 'jquery'
 Backbone.$ = $
 sd = require("sharify").data
 Commits = require "../../collections/commits.coffee"
