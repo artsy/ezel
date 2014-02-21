@@ -11,6 +11,7 @@
 //
 
 var Backbone = require('backbone'),
+    $ = require('jquery'),
     sd = require('sharify').data,
     Commits = require('../../collections/commits.js'),
     listTemplate = function() {
@@ -44,7 +45,7 @@ module.exports.init = function() {
     collection: new Commits(sd.COMMITS, { owner: 'artsy', repo: 'flare' })
   });
 };
-},{"../../collections/commits.js":4,"./templates/list.jade":2,"backbone":6,"sharify":11}],2:[function(require,module,exports){
+},{"../../collections/commits.js":4,"./templates/list.jade":2,"backbone":6,"jquery":10,"sharify":11}],2:[function(require,module,exports){
 var jade = require("jade/runtime");
 
 module.exports = function template(locals) {
@@ -135,7 +136,7 @@ module.exports = Commit = Backbone.Model.extend({
   }
 });
 },{"backbone":6,"sharify":11}],6:[function(require,module,exports){
-//     Backbone.js 1.1.1
+//     Backbone.js 1.1.2
 
 //     (c) 2010-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 //     Backbone may be freely distributed under the MIT license.
@@ -154,9 +155,8 @@ module.exports = Commit = Backbone.Model.extend({
 
   // Next for Node.js or CommonJS. jQuery may not be needed as a module.
   } else if (typeof exports !== 'undefined') {
-    var _ = require('underscore'), $;
-    try { $ = require('jquery'); } catch(e) {}
-    factory(root, exports, _, $);
+    var _ = require('underscore');
+    factory(root, exports, _);
 
   // Finally, as a browser global.
   } else {
@@ -179,7 +179,7 @@ module.exports = Commit = Backbone.Model.extend({
   var splice = array.splice;
 
   // Current version of the library. Keep in sync with `package.json`.
-  Backbone.VERSION = '1.1.1';
+  Backbone.VERSION = '1.1.2';
 
   // For Backbone's purposes, jQuery, Zepto, Ender, or My Library (kidding) owns
   // the `$` variable.
@@ -1430,7 +1430,7 @@ module.exports = Commit = Backbone.Model.extend({
                      return optional ? match : '([^/?]+)';
                    })
                    .replace(splatParam, '([^?]*?)');
-      return new RegExp('^' + route + '(?:\\?(.*))?$');
+      return new RegExp('^' + route + '(?:\\?([\\s\\S]*))?$');
     },
 
     // Given a route, and a URL fragment that it matches, return the array of
@@ -1587,7 +1587,7 @@ module.exports = Commit = Backbone.Model.extend({
     // but possibly useful for unit testing Routers.
     stop: function() {
       Backbone.$(window).off('popstate', this.checkUrl).off('hashchange', this.checkUrl);
-      clearInterval(this._checkUrlInterval);
+      if (this._checkUrlInterval) clearInterval(this._checkUrlInterval);
       History.started = false;
     },
 
@@ -1745,7 +1745,7 @@ module.exports = Commit = Backbone.Model.extend({
 
 }));
 
-},{"jquery":10,"underscore":7}],7:[function(require,module,exports){
+},{"underscore":7}],7:[function(require,module,exports){
 //     Underscore.js 1.6.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors

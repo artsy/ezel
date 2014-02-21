@@ -10,6 +10,7 @@
 //
 
 var Backbone = require('backbone'),
+    $ = require('jquery'),
     sd = require('sharify').data,
     Commits = require('../../collections/commits.js'),
     listTemplate = function() {
