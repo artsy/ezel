@@ -5,25 +5,25 @@
     "start": "make s"
   },
   "dependencies": {
-    "express": "*",
-    "jade": "*",
-    "sharify": "*",
     "backbone": "*",
-    "backbone-super-sync": "*"
+    "backbone-super-sync": "*",
+    "browserify": "*",
+    "browserify-dev-middleware": "*",
+    "html5": "*",
+    "express": "*",
+    "jquery": "*",
+    "jade": "*",
+    "jadeify": "*",
+    "sharify": "*",
+    "stylus": "*",
+    "sqwish": "*",
+    "uglify-js": "*",
+    "underscore": "*"
   },
   "devDependencies": {
-    "jquery": "*",
-    "browserify": "*",
-    "stylus": "*",
-    "jadeify": "*",
-    "browserify-dev-middleware": "*",
-    "should": "*",
+    "benv": "*",
     "mocha": "*",
     "sinon": "*",
-    "benv": "*",
-    "zombie": "*",
-    "html5": "*",
-    "sqwish": "*",
-    "uglify-js": "*"
+    "zombie": "*"
   }
 }
