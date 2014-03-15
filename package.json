@@ -9,7 +9,8 @@
     "jade": "*",
     "sharify": "*",
     "backbone": "*",
-    "backbone-super-sync": "*"
+    "backbone-super-sync": "*",
+    "q": "^1.0.1"
   },
   "devDependencies": {
     "jquery": "*",
