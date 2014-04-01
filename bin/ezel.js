@@ -23,3 +23,13 @@ if (program.coffeescript && program.clean) {
 } else {
   wrench.copyDirSyncRecursive(src + '/js-example', path);
 }
+
+console.log("");
+console.log("Generated new Ezel project at " + path)
+console.log("");
+console.log("install dependencies:");
+console.log("$ cd " + path + " && npm install");
+console.log("");
+console.log("start the server:");
+console.log("$ make s");
+console.log("");
