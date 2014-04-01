@@ -1,0 +1,9 @@
+//-
+//- The list template that renders the acutal commits. This template
+//- is used on the server via `include` in the index.jade file, and this same
+//- template is used on the client via
+//- [Jadeify](https://github.com/domenic/jadeify).
+//-
+
+for commit in commits
+  li= commit.get('commit').message

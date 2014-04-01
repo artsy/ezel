@@ -1,0 +1,15 @@
+include ../../../components/search/mixin
+
+doctype html
+html
+  head
+    title Artsy GitHub Repos
+    link( type='text/css', rel='stylesheet', href=('/assets/commits' + sd.CSS_EXT) )
+  body
+    h1 See commits for Artsy repos using the GitHub API!
+    mixin search('Try "flux" or "garner" for starters, and hit then enter.')
+    ul#commits-list
+      include list
+    #scripts
+      != sharify.script()
+      script( src='/assets/commits' + sd.JS_EXT )
