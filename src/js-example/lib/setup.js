@@ -17,6 +17,13 @@ sharify.data = {
   CSS_EXT: 'production' == c.NODE_ENV ? '.min.css' : '.css'
 };
 
+// Inject some constant data into sharify
+sharify.data = {
+  API_URL: c.API_URL,
+  JS_EXT: 'production' == c.NODE_ENV ? '.min.js' : '.js',
+  CSS_EXT: 'production' == c.NODE_ENV ? '.min.css' : '.css'
+};
+
 module.exports = function(app) {
 
   // Override Backbone to use server-side sync
