@@ -27,8 +27,8 @@ Ezel [shares javascript modules that run in the browser and on the server](http:
 ### Installation
 
 1. Install [Node.js](http://nodejs.org/)
-2. Download the boilerplate: [Javascript](https://github.com/artsy/ezel/archive/master.zip) | [Coffeescript](https://github.com/artsy/ezel/archive/coffeescript.zip)
-3. Rename the folder to your own project and `cd` to the directory
+2. Install the Ezel project generator globally `npm install -g ezel`
+3. Generate your project `ezel myapp` (Use `ezel --coffeescript myapp` for coffeescript) and `cd` to the directory.
 4. Install node modules `npm install`
 5. Run the server `make s`
 6. Visit [localhost:4000](http://localhost:4000) and see an example that uses the GitHub API.
@@ -45,7 +45,7 @@ First it would be good to familiarize yourself with the tools Ezel is built on.
 
 At its heart Ezel is just a Backbone app and therefore relies on an external API as its data source. This can come in a [variety](http://expressjs.com/) [of](https://github.com/intridea/grape) [forms](http://flask.pocoo.org/) and it's up to you to choose the best technology to serve your data over HTTP.
 
-Once you understand how the above tools work, diving into Ezel is just a matter of understanding its patterns. After this, when you're ready, you can delete all of the example files and start clean by running `make clean`.
+Once you understand how the above tools work, diving into Ezel is just a matter of understanding its patterns. After this, when you're ready, you can generate a new clean project without the Github example code by using `ezel --clean`.
 
 ## Project vs. Apps vs. Components
 

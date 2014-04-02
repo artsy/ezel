@@ -166,7 +166,7 @@ ul {
 
 <h3>Installation</h3>
 
-<ol><li>Install <a href="http://nodejs.org/">Node.js</a></li><li>Download the boilerplate: <a href="https://github.com/artsy/ezel/archive/master.zip">Javascript</a> | <a href="https://github.com/artsy/ezel/archive/coffeescript.zip">Coffeescript</a></li><li>Rename the folder to your own project and <code>cd</code> to the directory</li><li>Install node modules <code>npm install</code></li><li>Run the server <code>make s</code></li><li>Visit <a href="http://localhost:4000">localhost:4000</a> and see an example that uses the GitHub API.</li></ol>
+<ol><li>Install <a href="http://nodejs.org/">Node.js</a></li><li>Install the Ezel project generator globally <code>npm install -g ezel</code></li><li>Generate your project <code>ezel myapp</code> (Use <code>ezel --coffeescript myapp</code> for coffeescript) and <code>cd</code> to the directory.</li><li>Install node modules <code>npm install</code></li><li>Run the server <code>make s</code></li><li>Visit <a href="http://localhost:4000">localhost:4000</a> and see an example that uses the GitHub API.</li></ol>
 
 <h3>Overview</h3>
 
@@ -176,7 +176,7 @@ ul {
 
 <p>At its heart Ezel is just a Backbone app and therefore relies on an external API as its data source. This can come in a <a href="http://expressjs.com/">variety</a> <a href="https://github.com/intridea/grape">of</a> <a href="http://flask.pocoo.org/">forms</a> and it&#39;s up to you to choose the best technology to serve your data over HTTP.</p>
 
-<p>Once you understand how the above tools work, diving into Ezel is just a matter of understanding its patterns. After this, when you&#39;re ready, you can delete all of the example files and start clean by running <code>make clean</code>.</p>
+<p>Once you understand how the above tools work, diving into Ezel is just a matter of understanding its patterns. After this, when you&#39;re ready, you can generate a new clean project without the Github example code by using <code>ezel --clean</code>.</p>
 
 <h2 id="project vs. apps vs. components">Project vs. Apps vs. Components</h2>
 
