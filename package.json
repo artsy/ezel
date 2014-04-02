@@ -1,29 +1,11 @@
 {
   "name": "ezel",
-  "version": "0.0.2",
-  "scripts": {
-    "start": "make s"
-  },
+  "version": "0.1.3",
   "dependencies": {
-    "express": "*",
-    "jade": "*",
-    "sharify": "*",
-    "backbone": "*",
-    "backbone-super-sync": "*"
+    "commander": "*",
+    "wrench": "*"
   },
-  "devDependencies": {
-    "jquery": "*",
-    "browserify": "*",
-    "stylus": "*",
-    "jadeify": "*",
-    "browserify-dev-middleware": "*",
-    "should": "*",
-    "mocha": "*",
-    "sinon": "*",
-    "benv": "*",
-    "zombie": "*",
-    "html5": "*",
-    "sqwish": "*",
-    "uglify-js": "*"
+  "bin": {
+    "ezel": "./bin/ezel.js"
   }
 }
