@@ -33,18 +33,11 @@ module.exports = function(app) {
     req.set({ 'User-Agent': 'artsy' });
   };
 
-  // General express middleware
+  // Mount sharify
   app.use(sharify);
-  app.use(express.favicon());
-  app.use(express.logger('dev'));
-  app.use(express.json());
-  app.use(express.urlencoded());
-  app.use(express.methodOverride());
-  app.use(app.router);
 
   // Development only
   if ('development' == c.NODE_ENV) {
-    app.use(express.errorHandler());
     // Compile assets on request in development
     app.use(require('stylus').middleware({
       src: path.resolve(__dirname, '../'),
