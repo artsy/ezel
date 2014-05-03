@@ -15,5 +15,5 @@ describe "Commit", ->
     it "includes the owner and repo", ->
       @commit.collection = new Commits null,
         owner: "foo"
-        repo: "bar"    
+        repo: "bar"
       @commit.url().should.include "/repos/foo/bar/qux"
