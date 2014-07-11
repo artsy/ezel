@@ -138,7 +138,7 @@ ul {
     top: 0;
   }
 }
-</style></head><body><a id="forkme" href="https://github.com/artsy/ezel"><img style="top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a><div id="container"><nav id="menu"><a href="#introduction" class="active">Introduction</a><a href="#getting started">Getting Started</a><a href="#project vs. apps vs. components">Project vs. Apps vs. Components</a><a href="#models &amp; collections">Models &amp; Collections</a><a href="#libraries">Libraries</a><a href="#testing">Testing</a><a href="#build scripts &amp; configuration">Build Scripts &amp; Configuration</a><a href="#asset pipeline">Asset Pipeline</a></nav><h1>Ezel</h1>
+</style></head><body><a id="forkme" href="https://github.com/artsy/ezel"><img style="top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a><div id="container"><nav id="menu"><a href="#introduction" class="active">Introduction</a><a href="#getting started">Getting Started</a><a href="#project vs. apps vs. components">Project vs. Apps vs. Components</a><a href="#models &amp; collections">Models &amp; Collections</a><a href="#libraries">Libraries</a><a href="#testing">Testing</a><a href="#build scripts &amp; configuration">Build Scripts &amp; Configuration</a><a href="#asset pipeline">Asset Pipeline</a></nav><h1>Ezel</h1>
 
 <p><img alt="image" src="https://f.cloud.github.com/assets/555859/1462363/5ce5d010-44f4-11e3-99cd-e7a2f4f0c06d.png"></p>
 
@@ -146,7 +146,7 @@ ul {
 
 <h2 id="introduction">Introduction</h2>
 
-<p>Ezel makes it easy to write and maintain Backbone apps that run in the browser and on the server using <a href="http://nodejs.org/">Node.js</a>. Built on popular libraries like <a href="http://expressjs.com/">Express</a>, <a href="http://backbonejs.org/">Backbone</a>, and <a href="http://browserify.org/">Browserify</a>, Ezel isn&#39;t a framework or library of its own, but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.</p>
+<p>Ezel makes it easy to write and maintain Backbone apps that run in the browser and on the server using <a href="http://nodejs.org/">Node.js</a>. Built on popular libraries like <a href="http://expressjs.com/">Express</a>, <a href="http://backbonejs.org/">Backbone</a>, and <a href="http://browserify.org/">Browserify</a>, Ezel isn&apos;t a framework or library of its own, but rather a boilerplate of libraries and patterns that can be leveraged or abandoned as needed.</p>
 
 <p>Ezel has three main philosophies...</p>
 
@@ -156,7 +156,7 @@ ul {
 
 <h3>Flexiblity</h3>
 
-<p>Don&#39;t get locked into choosing between single page app or fully server-side rendered pages. Ezel&#39;s modular structure and shared server/client code makes it easy to decide what patterns and tools are best on a case by case basis.</p>
+<p>Don&apos;t get locked into choosing between single page app or fully server-side rendered pages. Ezel&apos;s modular structure and shared server/client code makes it easy to decide what patterns and tools are best on a case by case basis.</p>
 
 <h3>Run on Both Sides</h3>
 
@@ -174,9 +174,9 @@ ul {
 
 <ul><li><a href="http://backbonejs.org/">Backbone</a></li><li><a href="http://expressjs.com/">Express</a></li><li><a href="https://github.com/substack/node-browserify">Browserify</a></li><li><a href="https://github.com/artsy/sharify">Sharify</a></li><li><a href="https://github.com/artsy/benv">Benv</a></li></ul>
 
-<p>At its heart Ezel is just a Backbone app and therefore relies on an external API as its data source. This can come in a <a href="http://expressjs.com/">variety</a> <a href="https://github.com/intridea/grape">of</a> <a href="http://flask.pocoo.org/">forms</a> and it&#39;s up to you to choose the best technology to serve your data over HTTP.</p>
+<p>At its heart Ezel is just a Backbone app and therefore relies on an external API as its data source. This can come in a <a href="http://expressjs.com/">variety</a> <a href="https://github.com/intridea/grape">of</a> <a href="http://flask.pocoo.org/">forms</a> and it&apos;s up to you to choose the best technology to serve your data over HTTP.</p>
 
-<p>Once you understand how the above tools work, diving into Ezel is just a matter of understanding its patterns. After this, when you&#39;re ready, you can generate a new clean project without the Github example code by using <code>ezel --clean</code>.</p>
+<p>Once you understand how the above tools work, diving into Ezel is just a matter of understanding its patterns. After this, when you&apos;re ready, you can generate a new clean project without the Github example code by using <code>ezel --clean</code>.</p>
 
 <h2 id="project vs. apps vs. components">Project vs. Apps vs. Components</h2>
 
@@ -192,7 +192,7 @@ ul {
 
 <p>Apps are small express applications that are <a href="http://vimeo.com/56166857">mounted into the main project</a>. What distinguishes apps from one another is that they conceptually deal with a certain section of your website, and are often separated by a full page-refresh. As such an app could be a complex thick-client &quot;search&quot; app, or a simple static &quot;about&quot; page.</p>
 
-<p>Apps should strive to be self-contained and shouldn&#39;t require into other apps. However, apps will often need project-level modules so requiring into components, models, collections and libraries are fine. It&#39;s also encouraged to namespace your CSS classes inside an app by the app name to avoid conflicts, e.g. apps/user may use <code>h1.user-header</code>.</p>
+<p>Apps should strive to be self-contained and shouldn&apos;t require into other apps. However, apps will often need project-level modules so requiring into components, models, collections and libraries are fine. It&apos;s also encouraged to namespace your CSS classes inside an app by the app name to avoid conflicts, e.g. apps/user may use <code>h1.user-header</code>.</p>
 
 <p>The organization of these apps are up to you, for a simple app you may put all of your code into one express instance exported in a single index.js file. More complex apps may have their own /routes, /stylesheets, etc. folders or even look like its own Ezel project with components and sub-apps.</p>
 
@@ -202,17 +202,17 @@ ul {
 
 <p>Components are portions of UI re-used across apps and are simply a folder containing a mix of stylesheets, templates, and client-side code that can be required piece-meal. These can be thought of like a <a href="http://jqueryui.com/">jQuery UI widget</a>, <a href="http://getbootstrap.com/2.3.2/components.html">Bootstrap component</a>, <a href="http://backbonejs.org/#View">Backbone view</a>, or <a href="http://tjholowaychuk.com/post/27984551477/components">component.js</a> component. Components can be as simple a stylesheet and template, more complex like an autocomplete widget, or even a massive modal window pieced together from smaller components.</p>
 
-<p>Components should strive to be a library of self-contained UI and therefore shouldn&#39;t require into apps, however, it&#39;s totally fine to require into /lib or other components. It&#39;s also encouraged to namespace your CSS classes in a component by the component name to avoid conflicts, e.g. components/autocomplete may use <code>li.autocomplete-list-item</code>.</p>
+<p>Components should strive to be a library of self-contained UI and therefore shouldn&apos;t require into apps, however, it&apos;s totally fine to require into /lib or other components. It&apos;s also encouraged to namespace your CSS classes in a component by the component name to avoid conflicts, e.g. components/autocomplete may use <code>li.autocomplete-list-item</code>.</p>
 
 <h2 id="models &amp; collections">Models &amp; Collections</h2>
 
-<p>Model code is meant to work on the server and client so it must strictly be domain logic around your data. Model code can&#39;t use APIs only available to the browser or node such as accessing the file system or the <code>XMLHttpRequest</code> object.</p>
+<p>Model code is meant to work on the server and client so it must strictly be domain logic around your data. Model code can&apos;t use APIs only available to the browser or node such as accessing the file system or the <code>XMLHttpRequest</code> object.</p>
 
-<p>Backbone.sync is used as a layer over HTTP accessible on both sides. Any HTTP requests made in model and collection code therefore must be wrapped in a Backbone class or used by an anonymous instance e.g. <code>new Backbone.Model().fetch({ url: &#39;/api/system/up&#39;, success: //... })</code>.</p>
+<p>Backbone.sync is used as a layer over HTTP accessible on both sides. Any HTTP requests made in model and collection code therefore must be wrapped in a Backbone class or used by an anonymous instance e.g. <code>new Backbone.Model().fetch({ url: &apos;/api/system/up&apos;, success: //... })</code>.</p>
 
 <h2 id="libraries">Libraries</h2>
 
-<p>Libraries are a place to store modules that are used across apps and don&#39;t pertain to domain logic or UI that can be better handled by models or components. These can be server only such as a library zipping uploaded files, browser-only such as an HTML5 Canvas library, or even shared such as a date parsing library that can be used on both the server and client.</p>
+<p>Libraries are a place to store modules that are used across apps and don&apos;t pertain to domain logic or UI that can be better handled by models or components. These can be server only such as a library zipping uploaded files, browser-only such as an HTML5 Canvas library, or even shared such as a date parsing library that can be used on both the server and client.</p>
 
 <h2 id="testing">Testing</h2>
 
@@ -220,7 +220,7 @@ ul {
 
 <h3>Project-level Tests</h3>
 
-<p>Project-level tests involve any library, model, or collection tests. Because Ezel model code can run on the server you can easily test it in node without any extra ceremony and testing these parts should be straight-forward. In the case that you need to test model or collection fetching/persisting it&#39;s encouraged to stub Backbone.sync.</p>
+<p>Project-level tests involve any library, model, or collection tests. Because Ezel model code can run on the server you can easily test it in node without any extra ceremony and testing these parts should be straight-forward. In the case that you need to test model or collection fetching/persisting it&apos;s encouraged to stub Backbone.sync.</p>
 
 <h3>Component-level Tests</h3>
 
@@ -228,7 +228,7 @@ ul {
 
 <h3>App-level Tests</h3>
 
-<p>App-level tests can come in a number of different forms, but often involve some combination of route, template, client-side, and integration tests. Like components, apps should have their own tests under /test folders. Given that apps can vary in complexity and number of components they use, it&#39;s up to you to decide how to structure and test their parts.</p>
+<p>App-level tests can come in a number of different forms, but often involve some combination of route, template, client-side, and integration tests. Like components, apps should have their own tests under /test folders. Given that apps can vary in complexity and number of components they use, it&apos;s up to you to decide how to structure and test their parts.</p>
 
 <p>Some common practices are to split up your route handlers into libraries of functions that pass in stubbed request and response objects. Templates can be directly compiled with jade and asserted against the generated html. Client-side code can be unit tested in node using <a href="http://github.com/artsy/benv">benv</a> (Backbone views can help wrap code into testable methods). Finally a suite of integration tests use <a href="http://zombie.labnotes.org/">Zombie</a> and boot up a version of the project with a fake API server found under /test/helpers/integration.</p>
 
@@ -238,17 +238,17 @@ ul {
 
 <p>Ezel uses simple configuration and build tools that are standard with most environments.</p>
 
-<p>A <a href="http://en.wikipedia.org/wiki/Make_(software">Makefile</a> designates build commands. When more complex build scripts are needed it&#39;s encouraged to wrap them in libraries that can be run via <code>node lib/script.js</code>.</p>
+<p>A <a href="http://en.wikipedia.org/wiki/Make_(software">Makefile</a> designates build commands. When more complex build scripts are needed it&apos;s encouraged to wrap them in libraries that can be run via <code>node lib/script.js</code>.</p>
 
 <p>Configuration is handled entirely by <a href="http://en.wikipedia.org/wiki/Environment_variable">environment variables</a>. For ease of setup there is a /config.js file that wraps <code>process.env</code> and declares sensible defaults for development.</p>
 
 <h2 id="asset pipeline">Asset Pipeline</h2>
 
-<p>Ezel&#39;s asset building is mostly handled by <a href="https://github.com/substack/node-browserify">Browserify</a> and <a href="https://github.com/learnboost/stylus">Stylus</a> with middleware for development and a <code>make assets</code> task to output more production ready files to public/assets. Place your asset packages in /assets, point your script and style tags to /assets/&lt;filename&gt; in your views, and Ezel will wire the rest up for you.</p>
+<p>Ezel&apos;s asset building is mostly handled by <a href="https://github.com/substack/node-browserify">Browserify</a> and <a href="https://github.com/learnboost/stylus">Stylus</a> with middleware for development and a <code>make assets</code> task to output more production ready files to public/assets. Place your asset packages in /assets, point your script and style tags to /assets/&lt;filename&gt; in your views, and Ezel will wire the rest up for you.</p>
 
-<p>Ezel&#39;s focus on modularity makes it easy to build up light-weight asset packages that are focused for your needs. This combined with rendering on the server makes it a great option for optimizing initial page load.</p>
+<p>Ezel&apos;s focus on modularity makes it easy to build up light-weight asset packages that are focused for your needs. This combined with rendering on the server makes it a great option for optimizing initial page load.</p>
 
-<p>A common pattern would be to build asset packages per-app. For instance you may have a &quot;search&quot; app that uses assets from a layout component, an autocomplete component, and the search app&#39;s own client-side code and stylesheets. In this case you would create an /assets/search.styl that imports stylesheets from components/layout, components/autocomplete and app/search/stylesheets, and ditto for javascripts. In the view of the search app you would include <code>script( src=&#39;/assets/search.js&#39; )</code> and <code>link( href=&#39;/assets/search.css&#39; )</code> and Ezel will wire up the rest.</p></div><script src="http://code.jquery.com/jquery-1.10.2.min.js"></script><script type="text/javascript">$(function() {
+<p>A common pattern would be to build asset packages per-app. For instance you may have a &quot;search&quot; app that uses assets from a layout component, an autocomplete component, and the search app&apos;s own client-side code and stylesheets. In this case you would create an /assets/search.styl that imports stylesheets from components/layout, components/autocomplete and app/search/stylesheets, and ditto for javascripts. In the view of the search app you would include <code>script( src=&apos;/assets/search.js&apos; )</code> and <code>link( href=&apos;/assets/search.css&apos; )</code> and Ezel will wire up the rest.</p></div><script src="http://code.jquery.com/jquery-1.10.2.min.js"></script><script type="text/javascript">$(function() {
   $(window).on('scroll', function() {
     var curId;
     
