@@ -16,4 +16,4 @@ describe "Commit", ->
       @commit.collection = new Commits null,
         owner: "foo"
         repo: "bar"    
-      @commit.url().should.include "/repos/foo/bar/qux"
+      @commit.url().should.containEql "/repos/foo/bar/qux"

@@ -45,7 +45,7 @@ describe "CommitsView", ->
     it "renders the commits", ->
       @view.collection.reset [commit: { message: "Bump package.json version" }]
       @view.render()
-      @view.$el.html().should.include "Bump package.json version"
+      @view.$el.html().should.containEql "Bump package.json version"
 
   describe "#changeRepo", ->
 
