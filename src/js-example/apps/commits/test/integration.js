@@ -28,7 +28,7 @@ describe('commits', function() {
 
   it('displays the list of commits', function(done) {
     Browser.visit('http://localhost:5000', function(err, browser) {
-      browser.html().should.include('Adding a README');
+      browser.html().should.containEql('Adding a README');
       done();
     });
   });

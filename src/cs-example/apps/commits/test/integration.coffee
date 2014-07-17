@@ -24,5 +24,5 @@ describe "commits", ->
 
   it "displays the list of commits", (done) ->
     Browser.visit "http://localhost:5000", (err, browser) ->
-      browser.html().should.include "Adding a README"
+      browser.html().should.containEql "Adding a README"
       done()

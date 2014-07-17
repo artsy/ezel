@@ -60,7 +60,7 @@ describe('CommitsView', function() {
         { commit: { message: 'Bump package.json version'} }
       ]);
       view.render();
-      view.$el.html().should.include('Bump package.json version');
+      view.$el.html().should.containEql('Bump package.json version');
     });
   });
 
