@@ -22,7 +22,7 @@ describe('Commit', function() {
         owner: 'foo',
         repo: 'bar'
       });
-      commit.url().should.include('/repos/foo/bar/qux');
+      commit.url().should.containEql('/repos/foo/bar/qux');
     });
   });
 });
