@@ -4,6 +4,7 @@ w:
 	$(BIN)/jade index.jade -w
 
 commit:
+	cp ~/ezel/README.md .
 	node build.js
 	git add .
 	git commit -a

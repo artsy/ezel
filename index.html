@@ -192,7 +192,7 @@ ul {
 
 <p>Apps are small express applications that are <a href="http://vimeo.com/56166857">mounted into the main project</a>. What distinguishes apps from one another is that they conceptually deal with a certain section of your website, and are often separated by a full page-refresh. As such an app could be a complex thick-client &quot;search&quot; app, or a simple static &quot;about&quot; page.</p>
 
-<p>Apps should strive to be self-contained and shouldn&apos;t require into other apps. However, apps will often need project-level modules so requiring into components, models, collections and libraries are fine. It&apos;s also encouraged to namespace your CSS classes inside an app by the app name to avoid conflicts, e.g. apps/user may use <code>h1.user-header</code>.</p>
+<p>Apps should strive to be self-contained and shouldn&apos;t require into other apps. However, apps will often need project-level modules so requiring into components, models, collections and libraries are fine. It&apos;s encouraged to namespace your CSS classes inside an app by the app name to avoid conflicts, e.g. apps/user may use <code>h1.user-header</code>. It&apos;s also encouraged to use app-level public folders for static assets and namespace your filenames by app name e.g. <code>/apps/user/public/images/user-icon.png</code> which can be referenced normally in templates and stylesheets e.g. <code>/images/user-icon.png</code>.</p>
 
 <p>The organization of these apps are up to you, for a simple app you may put all of your code into one express instance exported in a single index.js file. More complex apps may have their own /routes, /stylesheets, etc. folders or even look like its own Ezel project with components and sub-apps.</p>
 
@@ -202,7 +202,7 @@ ul {
 
 <p>Components are portions of UI re-used across apps and are simply a folder containing a mix of stylesheets, templates, and client-side code that can be required piece-meal. These can be thought of like a <a href="http://jqueryui.com/">jQuery UI widget</a>, <a href="http://getbootstrap.com/2.3.2/components.html">Bootstrap component</a>, <a href="http://backbonejs.org/#View">Backbone view</a>, or <a href="http://tjholowaychuk.com/post/27984551477/components">component.js</a> component. Components can be as simple a stylesheet and template, more complex like an autocomplete widget, or even a massive modal window pieced together from smaller components.</p>
 
-<p>Components should strive to be a library of self-contained UI and therefore shouldn&apos;t require into apps, however, it&apos;s totally fine to require into /lib or other components. It&apos;s also encouraged to namespace your CSS classes in a component by the component name to avoid conflicts, e.g. components/autocomplete may use <code>li.autocomplete-list-item</code>.</p>
+<p>Components should strive to be a library of self-contained UI and therefore shouldn&apos;t require into apps, however, it&apos;s totally fine to require into /lib or other components. It&apos;s encouraged to namespace your CSS classes in a component by the component name to avoid conflicts, e.g. components/autocomplete may use <code>li.autocomplete-list-item</code>. It&apos;s also encouraged to use component-level public folders for static assets and namespace your filenames by component name e.g. <code>/components/autocomplete/public/images/autocomplete-icon.png</code> which can be referenced normally in templates and stylesheets e.g. <code>/images/autocomplete-icon.png</code>.</p>
 
 <h2 id="models &amp; collections">Models &amp; Collections</h2>
 
@@ -251,27 +251,27 @@ ul {
 <p>A common pattern would be to build asset packages per-app. For instance you may have a &quot;search&quot; app that uses assets from a layout component, an autocomplete component, and the search app&apos;s own client-side code and stylesheets. In this case you would create an /assets/search.styl that imports stylesheets from components/layout, components/autocomplete and app/search/stylesheets, and ditto for javascripts. In the view of the search app you would include <code>script( src=&apos;/assets/search.js&apos; )</code> and <code>link( href=&apos;/assets/search.css&apos; )</code> and Ezel will wire up the rest.</p></div><script src="http://code.jquery.com/jquery-1.10.2.min.js"></script><script type="text/javascript">$(function() {
   $(window).on('scroll', function() {
     var curId;
-    
+
     // If you scroll past the introduction, start the pop-lock
     if ($(window).scrollTop() > $('#introduction').offset().top) {
       $('#menu').addClass('fixed');
-      
+
       // If you get to the bottom the last menu item is highlighted
       if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
         curId =$('h2:last-of-type').attr('id');
-        
+
       // Otherwise highlight the h2 closest to the top of the window
       } else {
         curId = ($($($('h2').get().reverse()).filter(function() {
           return $(window).scrollTop() + 20 > $(this).offset().top;
         })[0]).attr('id'));
       }
-      
+
       // Highlight the left-hand nav item
       $('#menu a').removeClass('active');
       var sel = '[href="#' + curId + '"]';
       $(sel).addClass('active');
-      
+
     // Otherwise un-locked
     } else {
       $('#menu a').removeClass('active');
