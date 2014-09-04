@@ -23,11 +23,18 @@ h2 {
 #commits-list li {
   margin: 20px;
 }
+#commits-img {
+  height: 150px;
+  margin: auto;
+  display: block;
+}
 .search-input {
   border: 1px solid #eee;
-  padding: 10px;
+  padding: 10px 10px 10px 40px;
   width: 500px;
   margin: 0 auto;
   display: block;
   font-size: 16px;
+  background: url("/images/search-icon.jpg") 7px center no-repeat;
+  background-size: 22px;
 }

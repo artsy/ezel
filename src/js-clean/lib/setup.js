@@ -8,7 +8,8 @@ var c = require('../config'),
   express = require('express'),
   Backbone = require('backbone'),
   sharify = require('sharify'),
-  path = require('path');
+  path = require('path'),
+  fs = require('fs');
 
 // Inject some constant data into sharify
 sharify.data = {
@@ -49,6 +50,12 @@ module.exports = function(app) {
     res.send('Start by writing an app in /apps and mounting it in /lib/setup!');
   });
 
-  // More general middleware
+  // Mount static middleware for sub apps, components, and project-wide
+  fs.readdirSync(path.resolve(__dirname, '../apps')).forEach(function(fld) {
+    app.use(express.static(path.resolve(__dirname, '../apps/' + fld + '/public')));
+  });
+  fs.readdirSync(path.resolve(__dirname, '../components')).forEach(function(fld) {
+    app.use(express.static(path.resolve(__dirname, '../components/' + fld + '/public')));
+  });
   app.use(express.static(path.resolve(__dirname, '../public')));
 }
