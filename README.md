@@ -61,7 +61,7 @@ Refers to the root, "global", level and contains the initial setup/server code a
 
 Apps are small express applications that are [mounted into the main project](http://vimeo.com/56166857). What distinguishes apps from one another is that they conceptually deal with a certain section of your website, and are often separated by a full page-refresh. As such an app could be a complex thick-client "search" app, or a simple static "about" page.
 
-Apps should strive to be self-contained and shouldn't require into other apps. However, apps will often need project-level modules so requiring into components, models, collections and libraries are fine. It's also encouraged to namespace your CSS classes inside an app by the app name to avoid conflicts, e.g. apps/user may use `h1.user-header`.
+Apps should strive to be self-contained and shouldn't require into other apps. However, apps will often need project-level modules so requiring into components, models, collections and libraries are fine. It's encouraged to namespace your CSS classes inside an app by the app name to avoid conflicts, e.g. apps/user may use `h1.user-header`. It's also encouraged to use app-level public folders for static assets and namespace your filenames by app name e.g. `/apps/user/public/images/user-icon.png` which can be referenced normally in templates and stylesheets e.g. `/images/user-icon.png`.
 
 The organization of these apps are up to you, for a simple app you may put all of your code into one express instance exported in a single index.js file. More complex apps may have their own /routes, /stylesheets, etc. folders or even look like its own Ezel project with components and sub-apps.
 
@@ -71,7 +71,7 @@ Large web projects often have a wide range of needs on a case by case basis. Ins
 
 Components are portions of UI re-used across apps and are simply a folder containing a mix of stylesheets, templates, and client-side code that can be required piece-meal. These can be thought of like a [jQuery UI widget](http://jqueryui.com/), [Bootstrap component](http://getbootstrap.com/2.3.2/components.html), [Backbone view](http://backbonejs.org/#View), or [component.js](http://tjholowaychuk.com/post/27984551477/components) component. Components can be as simple a stylesheet and template, more complex like an autocomplete widget, or even a massive modal window pieced together from smaller components.
 
-Components should strive to be a library of self-contained UI and therefore shouldn't require into apps, however, it's totally fine to require into /lib or other components. It's also encouraged to namespace your CSS classes in a component by the component name to avoid conflicts, e.g. components/autocomplete may use `li.autocomplete-list-item`.
+Components should strive to be a library of self-contained UI and therefore shouldn't require into apps, however, it's totally fine to require into /lib or other components. It's encouraged to namespace your CSS classes in a component by the component name to avoid conflicts, e.g. components/autocomplete may use `li.autocomplete-list-item`. It's also encouraged to use component-level public folders for static assets and namespace your filenames by component name e.g. `/components/autocomplete/public/images/autocomplete-icon.png` which can be referenced normally in templates and stylesheets e.g. `/images/autocomplete-icon.png`.
 
 ## Models & Collections
 
