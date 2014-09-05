@@ -4,7 +4,7 @@ w:
 	$(BIN)/jade index.jade -w
 
 commit:
-	cp ~/ezel/README.md .
+	curl https://raw.githubusercontent.com/artsy/ezel/master/README.md > README.md
 	node build.js
 	git add .
 	git commit -a
