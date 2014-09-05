@@ -27,6 +27,7 @@
     "html5": "*",
     "sqwish": "*",
     "uglify-js": "*",
-    "caching-coffeeify": "*"
+    "caching-coffeeify": "*",
+    "node-env-file": "*"
   }
 }
