@@ -4,21 +4,21 @@
 // populating sharify data
 //
 
-var c = require('../config'),
-    express = require('express'),
+var express = require('express'),
     Backbone = require('backbone'),
     sharify = require('sharify'),
     path = require('path'),
     fs = require('fs');
 
-// Inject some constant data into sharify
-sharify.data = {
-  API_URL: c.API_URL,
-  JS_EXT: 'production' == c.NODE_ENV ? '.min.js' : '.js',
-  CSS_EXT: 'production' == c.NODE_ENV ? '.min.css' : '.css'
-};
-
 module.exports = function(app) {
+
+  // Inject some configuration & constant data into sharify
+  var sd = sharify.data = {
+    API_URL: process.env.API_URL,
+    NODE_ENV: process.env.NODE_ENV,
+    JS_EXT: 'production' == process.env.NODE_ENV ? '.min.js' : '.js',
+    CSS_EXT: 'production' == process.env.NODE_ENV ? '.min.css' : '.css'
+  };
 
   // Override Backbone to use server-side sync
   Backbone.sync = require('backbone-super-sync');
@@ -31,7 +31,7 @@ module.exports = function(app) {
   app.use(sharify);
 
   // Development only
-  if ('development' == c.NODE_ENV) {
+  if ('development' == sd.NODE_ENV) {
     // Compile assets on request in development
     app.use(require('stylus').middleware({
       src: path.resolve(__dirname, '../'),
@@ -44,7 +44,7 @@ module.exports = function(app) {
   }
 
   // Test only
-  if('test' == c.NODE_ENV) {
+  if('test' == sd.NODE_ENV) {
     // Mount fake API server
     app.use('/__api', require('../test/helpers/integration.js').api);
   }

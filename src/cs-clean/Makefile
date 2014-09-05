@@ -7,6 +7,11 @@
 #
 
 BIN = node_modules/.bin
+ENV_FILE_URL = https://gist.githubusercontent.com/<your-raw-env-gist>/.env
+
+# Check for an .env file and download it if it doesn't exist
+downloadenv:
+	if [ -a .env ]; then echo; else curl $(ENV_FILE_URL) > .env; fi;
 
 # Start the server
 s:
