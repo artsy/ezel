@@ -109,7 +109,9 @@ Ezel uses simple configuration and build tools that are standard with most envir
 
 A [Makefile](http://en.wikipedia.org/wiki/Make_(software)) designates build commands. When more complex build scripts are needed it's encouraged to wrap them in libraries that can be run via `node lib/script.js`.
 
-Configuration is handled entirely by [environment variables](http://en.wikipedia.org/wiki/Environment_variable). For ease of setup there is a /config.js file that wraps `process.env` and declares sensible defaults for development.
+Configuration is handled entirely by [environment variables](http://en.wikipedia.org/wiki/Environment_variable). For ease of setup there is a .env file that declares sensible defaults for development. For non-sensitive config data like `NODE_ENV` it's encouraged to use [sharify](https://github.com/artsy/sharify) (e.g. `var sd = require('sharify').data; console.log(sd.NODE_ENV)`) which you can add to in lib/setup. For sensitive data on the server simply use `process.env`. Be careful not to add sensitive data to sharify as it will expose it on the client.
+
+By consolidating all of your configuration with potentially sensitive data into env variables and one .env file, Ezel makes it easy to open source your project without giving out private keys/secrets. To do this add `.env` to your .gitignore file, change the `ENV_FILE_URL` in the Makefile to a raw private gist url, and Ezel will wire up the rest. Doing this and open sourcing your repo is also highly encouraged (• ◡•) but you can certainly ignore this step and use Ezel just fine in your own little cave.
 
 ## Asset Pipeline
 
