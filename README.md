@@ -107,7 +107,7 @@ All of these techniques ensure your code remains decoupled, your tests run fast,
 
 Ezel uses simple configuration and build tools that are standard with most environments.
 
-A [Makefile](http://en.wikipedia.org/wiki/Make_(software) designates build commands. When more complex build scripts are needed it's encouraged to wrap them in libraries that can be run via `node lib/script.js`.
+A [Makefile](http://en.wikipedia.org/wiki/Make_(software)) designates build commands. When more complex build scripts are needed it's encouraged to wrap them in libraries that can be run via `node lib/script.js`.
 
 Configuration is handled entirely by [environment variables](http://en.wikipedia.org/wiki/Environment_variable). For ease of setup there is a /config.js file that wraps `process.env` and declares sensible defaults for development.
 
