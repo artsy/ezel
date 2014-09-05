@@ -4,20 +4,20 @@
 # populating sharify data
 #
 
-{ API_URL, NODE_ENV } = require '../config'
 express = require 'express'
 Backbone = require 'backbone'
 sharify = require 'sharify'
 path = require 'path'
 fs = require 'fs'
 
-# Inject some constant data into sharify
-sharify.data =
-  API_URL: API_URL
-  JS_EXT: (if 'production' is NODE_ENV then '.min.js' else '.js')
-  CSS_EXT: (if 'production' is NODE_ENV then '.min.css' else '.css')
-
 module.exports = (app) ->
+
+  # Inject some configuration & constant data into sharify
+  sd = sharify.data =
+    API_URL: process.env.API_URL
+    NODE_ENV: process.env.NODE_ENV
+    JS_EXT: (if 'production' is process.env.NODE_ENV then '.min.js' else '.js')
+    CSS_EXT: (if 'production' is process.env.NODE_ENV then '.min.css' else '.css')
 
   # Override Backbone to use server-side sync
   Backbone.sync = require 'backbone-super-sync'
@@ -28,7 +28,7 @@ module.exports = (app) ->
   app.use sharify
 
   # Development only
-  if 'development' is NODE_ENV
+  if 'development' is sd.NODE_ENV
     # Compile assets on request in development
     app.use require('stylus').middleware
       src: path.resolve(__dirname, '../')
@@ -38,7 +38,7 @@ module.exports = (app) ->
       transforms: [require('jadeify'), require('caching-coffeeify')]
 
   # Test only
-  if 'test' is NODE_ENV
+  if 'test' is sd.NODE_ENV
     # Mount fake API server
     app.use '/__api', require('../test/helpers/integration.coffee').api
 
