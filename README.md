@@ -111,8 +111,6 @@ A [Makefile](http://en.wikipedia.org/wiki/Make_(software)) designates build comm
 
 Configuration is handled entirely by [environment variables](http://en.wikipedia.org/wiki/Environment_variable). For ease of setup there is a .env file that declares sensible defaults for development. For non-sensitive config data like `NODE_ENV` it's encouraged to use [sharify](https://github.com/artsy/sharify) (e.g. `var sd = require('sharify').data; console.log(sd.NODE_ENV)`) which you can add to in lib/setup. For sensitive data on the server simply use `process.env`. Be careful not to add sensitive data to sharify as it will expose it on the client.
 
-By consolidating all of your configuration with potentially sensitive data into env variables and one .env file, Ezel makes it easy to open source your project without giving out private keys/secrets. To do this add `.env` to your .gitignore file, change the `ENV_FILE_URL` in the Makefile to a raw private gist url, and Ezel will wire up the rest. Doing this and open sourcing your repo is also highly encouraged (• ◡•) but you can certainly ignore this step and use Ezel just fine in your own little cave.
-
 ## Asset Pipeline
 
 Ezel's asset building is mostly handled by [Browserify](https://github.com/substack/node-browserify) and [Stylus](https://github.com/learnboost/stylus) with middleware for development and a `make assets` task to output more production ready files to public/assets. Place your asset packages in /assets, point your script and style tags to /assets/<filename> in your views, and Ezel will wire the rest up for you.
