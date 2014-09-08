@@ -5,7 +5,7 @@ var program = require('commander'),
     wrench = require('wrench');
 
 program
-  .version('0.2.1')
+  .version('0.2.2')
   .usage('[options] [dir]')
   .option('-c, --clean', 'Clean version without the Github example code.')
   .option('-cs, --coffeescript', 'Use coffeescript.')
