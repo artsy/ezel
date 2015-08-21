@@ -21,10 +21,12 @@ module.exports = function(app) {
   };
 
   // Override Backbone to use server-side sync
-  Backbone.sync = require('backbone-super-sync');
+  var sync = Backbone.sync = require('backbone-super-sync');
   // Set some headers for the Github API
-  Backbone.sync.editRequest = function(req) {
-    req.set({ 'User-Agent': 'artsy' });
+  Backbone.sync = function(method, model, options) {
+    if(!options.headers) options.headers = {};
+    options.headers['User-Agent'] = 'artsy';
+    sync(method, model, options);
   };
 
   // Mount sharify
