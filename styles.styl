@@ -55,6 +55,10 @@ ul
   list-style-type circle
 ol
   list-style-type decimal
+.small-caps
+  font-size 12px
+  font-weight bold
+  letter-spacing 1px
 
 #container
   width width
@@ -65,15 +69,19 @@ ol
 
 #menu
   position absolute
-  top 40px
+  top 15px
   margin 600px 0 0 -285px
   width 240px
   border-right 1px solid #eee
   a
     display block
-    margin 10px 0
+    margin 0 0 20px 0
     color #999
     text-decoration none
+    font-size 14px
+    letter-spacing 2px
+    text-transform uppercase
+    line-height 1.3em
     &.active
       color black
   &.fixed
