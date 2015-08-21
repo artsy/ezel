@@ -1,57 +1,60 @@
-<!DOCTYPE html><html><head><title>Ezel</title><link href="http://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width" initial-scale="1.0,user-scalable=no"><style>body {
+<!DOCTYPE html><html><head><title>Ezel</title><link href="http://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic|Source+Code+Pro" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width" initial-scale="1.0,user-scalable=no"><style>@import './reset.css';
+body {
   background: #fff;
-  font-family: 'Quattrocento', serif;
+  font-family: 'Lora', 'Georgia', serif;
   color: #444;
-  line-height: 1.6em;
-  font-size: 16px;
+  line-height: 1.5em;
+  font-size: 17px;
   margin: 0;
   padding: 0;
 }
-img {
+h1 + p > img {
   float: left;
-}
-h1 {
-  position: absolute;
-  left: 680px;
-  top: 140px;
-  font-size: 72px;
-  font-weight: normal;
+  width: 400px;
+  margin-left: -172px;
 }
 p:nth-of-type(2) {
   clear: both;
   position: absolute;
-  top: 130px;
-  padding: 110px 0px 0 402px;
-  line-height: 1.4em;
+  top: 90px;
+  padding: 110px 0px 0 250px;
 }
 a {
   color: #444;
 }
 code {
-  font-size: 11px;
-  font-family: courier;
+  font-size: 15px;
+  font-family: 'Source Code Pro';
   background: #f2f2f2;
   border-radius: 4px;
-  padding: 4px 7px;
+  padding: 2px 7px;
+}
+h1 {
+  position: absolute;
+  left: 526px;
+  top: 140px;
+  font-size: 72px;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
 }
 h2 {
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 28px;
+  padding: 1em 0 15px 0;
 }
 h2:first-of-type {
   clear: both;
   padding-top: 20px;
 }
 h3 {
-  font-size: 21px;
   font-weight: bold;
-}
-h2,
-h3 {
-  margin: 0;
-  padding: 0;
-  line-height: 1.2em;
-  padding: 1em 0 0.5em 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 1em 0 0 0;
 }
 p {
   padding: 0;
@@ -60,12 +63,18 @@ p {
 }
 ol,
 ul {
-  padding: 0;
+  margin-bottom: 1em;
+}
+ul {
+  list-style-type: circle;
+}
+ol {
+  list-style-type: decimal;
 }
 #container {
-  width: 700px;
+  width: 600px;
   position: relative;
-  margin-left: calc(50% - 600px);
+  margin-left: calc(50% - 450px);
   padding-left: 280px;
   padding-bottom: 80px;
 }
@@ -73,7 +82,7 @@ ul {
   position: absolute;
   top: 40px;
   margin: 600px 0 0 -285px;
-  width: 250px;
+  width: 240px;
   border-right: 1px solid #eee;
 }
 #menu a {
@@ -92,7 +101,7 @@ ul {
 #forkme img {
   position: fixed;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
   #forkme img {
     position: absolute;
     z-index: 2;
@@ -102,10 +111,13 @@ ul {
   }
   #container {
     margin: 0;
-    padding: 40px 30px 30px 30px;
+    padding: 40px;
   }
   h1 {
-    left: 420px;
+    left: 287px;
+  }
+  h1 + p > img {
+    margin-left: -90px;
   }
 }
 @media (max-width: 600px) {
@@ -114,9 +126,6 @@ ul {
     margin: 0;
     box-sizing: border-box;
     padding-top: 90px;
-  }
-  #container h1 {
-    padding-left: 50px;
   }
   #container img {
     max-height: 300px;
@@ -133,9 +142,13 @@ ul {
   }
   h1 {
     position: relative;
-    margin-top: 0;
+    padding-left: 0;
+    margin: 0;
+    top: -30px;
     left: 0;
-    top: 0;
+  }
+  h1 + p > img {
+    margin-left: 0;
   }
 }
 </style></head><body><a id="forkme" href="https://github.com/artsy/ezel"><img style="top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a><div id="container"><nav id="menu"><a href="#introduction" class="active">Introduction</a><a href="#getting started">Getting Started</a><a href="#project vs. apps vs. components">Project vs. Apps vs. Components</a><a href="#models &amp; collections">Models &amp; Collections</a><a href="#libraries">Libraries</a><a href="#testing">Testing</a><a href="#build scripts &amp; configuration">Build Scripts &amp; Configuration</a><a href="#asset pipeline">Asset Pipeline</a></nav><h1>Ezel</h1>
@@ -255,7 +268,7 @@ ul {
     var curId;
 
     // If you scroll past the introduction, start the pop-lock
-    if ($(window).scrollTop() > $('#introduction').offset().top) {
+    if ($(window).scrollTop() > $('#introduction').offset().top + 30) {
       $('#menu').addClass('fixed');
 
       // If you get to the bottom the last menu item is highlighted

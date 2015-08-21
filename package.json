@@ -6,6 +6,7 @@
     "coffee-script": "*",
     "stylus": "*",
     "markdown": "*",
-    "cheerio": "*"
+    "cheerio": "*",
+    "superagent": "*"
   }
 }

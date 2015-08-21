@@ -2,7 +2,7 @@ doctype html
 html
   head
     title Ezel
-    link( href='http://fonts.googleapis.com/css?family=Quattrocento', rel='stylesheet', type='text/css' )
+    link( href='http://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic|Source+Code+Pro' rel='stylesheet' type='text/css' )
     meta( name='viewport', content='width=device-width', initial-scale='1.0,user-scalable=no' )
     style
       include:styl styles.styl
@@ -20,7 +20,7 @@ html
             a.active( href='#' + item.toLowerCase() )= item
           else
             a( href='#' + item.toLowerCase() )= item
-      include:markdown README.md
+      != body
     script( src="http://code.jquery.com/jquery-1.10.2.min.js" )
     script(type='text/javascript').
       $(function() {
@@ -28,7 +28,7 @@ html
           var curId;
 
           // If you scroll past the introduction, start the pop-lock
-          if ($(window).scrollTop() > $('#introduction').offset().top) {
+          if ($(window).scrollTop() > $('#introduction').offset().top + 30) {
             $('#menu').addClass('fixed');
 
             // If you get to the bottom the last menu item is highlighted
