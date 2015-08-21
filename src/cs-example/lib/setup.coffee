@@ -20,9 +20,12 @@ module.exports = (app) ->
     CSS_EXT: (if 'production' is process.env.NODE_ENV then '.min.css' else '.css')
 
   # Override Backbone to use server-side sync
-  Backbone.sync = require 'backbone-super-sync'
+  sync = Backbone.sync = require 'backbone-super-sync'
   # Set some headers for the Github API
-  Backbone.sync.editRequest = (req) -> req.set 'User-Agent': 'artsy'
+  Backbone.sync = (method, model, options) ->
+    options.headers ?= {}
+    options.headers['User-Agent'] = 'artsy'
+    sync method, model, options
 
   # Mount sharify
   app.use sharify

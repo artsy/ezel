@@ -1,0 +1,40 @@
+body {
+  font-family: 'Helvetica', 'Arial', 'sans-serif';
+  color: #444;
+  padding: 10px 100px;
+  line-height: 1.4em;
+}
+h1,
+h2 {
+  text-align: center;
+}
+h1 {
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+h2 {
+  font-weight: normal;
+  font-size: 18px;
+}
+#commits-list {
+  width: 600px;
+  margin: 20px auto;
+}
+#commits-list li {
+  margin: 20px;
+}
+#commits-img {
+  height: 150px;
+  margin: auto;
+  display: block;
+}
+.search-input {
+  border: 1px solid #eee;
+  padding: 10px 10px 10px 40px;
+  width: 500px;
+  margin: 0 auto;
+  display: block;
+  font-size: 16px;
+  background: url("/images/search-icon.jpg") 7px center no-repeat;
+  background-size: 22px;
+}
